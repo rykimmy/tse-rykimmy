@@ -11,10 +11,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-//#include "/thayerfs/home/f004qsx/cs50/labs/tse-rykimmy/libcs50/libcs50-given.a"
-#include "/thayerfs/home/f004qsx/cs50/labs/tse-rykimmy/libcs50/webpage.h"
-#include "/thayerfs/home/f004qsx/cs50/labs/tse-rykimmy/libcs50/hashtable.h"
-#include "/thayerfs/home/f004qsx/cs50/labs/tse-rykimmy/libcs50/memory.h"
+#include "../libcs50/webpage.h"
+#include "../libcs50/hashtable.h"
+#include "../libcs50/memory.h"
 
 /**************** check_dir **************************/
 /* If pointer fp is NULL, print error message to stderr and die,

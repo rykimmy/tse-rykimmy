@@ -1,0 +1,1550 @@
+test with invalid pageDirectory:
+check_dir(): cannot open file for writing
+invalid arg 3: page directory does not exist or is not writable
+test with invalid maxDepth:
+invalid arg 4: integer must be in range [0, 10]
+test with seedURL that points to non-existent server:
+invalid seedURL: make sure URL is valid and internal to our domain
+test with seedURL that points to non-internal server:
+invalid seedURL: make sure URL is valid and internal to our domain
+test with seedURL that points to valid server but non-existent page:
+failed to fetch http://cs50tse.cs.dartmouth.edu/tse/letters/nonexistentpage.html
+test with seedURL: wiki, depth: 1
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+Saved to: pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Computer_science.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./C_(programming_language).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Unix.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Dartmouth_College.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Hash_table.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Linked_list.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+Saved to: pages/2
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+Saved to: pages/3
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+Saved to: pages/4
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unix.html
+Saved to: pages/5
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/C_(programming_language).html
+Saved to: pages/6
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+Saved to: pages/7
+test with seedURL: toscrape, depth: 1
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/index.html
+Saved to: pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books_1/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/travel_2/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/mystery_3/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical-fiction_4/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sequential-art_5/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/classics_6/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/philosophy_7/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/romance_8/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/womens-fiction_9/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fiction_10/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/childrens_11/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/religion_12/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/nonfiction_13/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/music_14/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/default_15/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science-fiction_16/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sports-and-games_17/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/add-a-comment_18/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fantasy_19/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/new-adult_20/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/young-adult_21/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science_22/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/poetry_23/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/paranormal_24/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/art_25/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/psychology_26/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/autobiography_27/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/parenting_28/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/adult-fiction_29/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/humor_30/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/horror_31/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/history_32/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/food-and-drink_33/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/christian-fiction_34/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/business_35/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/biography_36/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/thriller_37/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/contemporary_38/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/spirituality_39/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/academic_40/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/self-help_41/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical_42/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/christian_43/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/suspense_44/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/short-stories_45/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/novels_46/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/health_47/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/politics_48/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/cultural_49/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/erotica_50/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/crime_51/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-light-in-the-attic_1000/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-light-in-the-attic_1000/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/tipping-the-velvet_999/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/tipping-the-velvet_999/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/soumission_998/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/soumission_998/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/sharp-objects_997/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/sharp-objects_997/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/sapiens-a-brief-history-of-humankind_996/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/sapiens-a-brief-history-of-humankind_996/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-requiem-red_995/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-requiem-red_995/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-black-maria_991/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-black-maria_991/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/starving-hearts-triangular-trade-trilogy-1_990/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/starving-hearts-triangular-trade-trilogy-1_990/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/shakespeares-sonnets_989/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/shakespeares-sonnets_989/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/set-me-free_988/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/set-me-free_988/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/scott-pilgrims-precious-little-life-scott-pilgrim-1_987/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/scott-pilgrims-precious-little-life-scott-pilgrim-1_987/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/rip-it-up-and-start-again_986/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/rip-it-up-and-start-again_986/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/olio_984/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/olio_984/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/mesaerion-the-best-science-fiction-stories-1800-1849_983/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/mesaerion-the-best-science-fiction-stories-1800-1849_983/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/libertarianism-for-beginners_982/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/libertarianism-for-beginners_982/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/its-only-the-himalayas_981/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/its-only-the-himalayas_981/index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-2.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/page-2.html
+Saved to: pages/2
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/its-only-the-himalayas_981/index.html
+Saved to: pages/3
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/libertarianism-for-beginners_982/index.html
+Saved to: pages/4
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/mesaerion-the-best-science-fiction-stories-1800-1849_983/index.html
+Saved to: pages/5
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/olio_984/index.html
+Saved to: pages/6
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/our-band-could-be-your-life-scenes-from-the-american-indie-underground-1981-1991_985/index.html
+Saved to: pages/7
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/rip-it-up-and-start-again_986/index.html
+Saved to: pages/8
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/scott-pilgrims-precious-little-life-scott-pilgrim-1_987/index.html
+Saved to: pages/9
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/set-me-free_988/index.html
+Saved to: pages/10
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/shakespeares-sonnets_989/index.html
+Saved to: pages/11
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/starving-hearts-triangular-trade-trilogy-1_990/index.html
+Saved to: pages/12
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-black-maria_991/index.html
+Saved to: pages/13
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html
+Saved to: pages/14
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html
+Saved to: pages/15
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html
+Saved to: pages/16
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/the-requiem-red_995/index.html
+Saved to: pages/17
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/sapiens-a-brief-history-of-humankind_996/index.html
+Saved to: pages/18
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/sharp-objects_997/index.html
+Saved to: pages/19
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/soumission_998/index.html
+Saved to: pages/20
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/tipping-the-velvet_999/index.html
+Saved to: pages/21
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/a-light-in-the-attic_1000/index.html
+Saved to: pages/22
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/crime_51/index.html
+Saved to: pages/23
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/erotica_50/index.html
+Saved to: pages/24
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/cultural_49/index.html
+Saved to: pages/25
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/politics_48/index.html
+Saved to: pages/26
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/health_47/index.html
+Saved to: pages/27
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/novels_46/index.html
+Saved to: pages/28
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/short-stories_45/index.html
+Saved to: pages/29
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/suspense_44/index.html
+Saved to: pages/30
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/christian_43/index.html
+Saved to: pages/31
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical_42/index.html
+Saved to: pages/32
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/self-help_41/index.html
+Saved to: pages/33
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/academic_40/index.html
+Saved to: pages/34
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/spirituality_39/index.html
+Saved to: pages/35
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/contemporary_38/index.html
+Saved to: pages/36
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/thriller_37/index.html
+Saved to: pages/37
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/biography_36/index.html
+Saved to: pages/38
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/business_35/index.html
+Saved to: pages/39
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/christian-fiction_34/index.html
+Saved to: pages/40
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/food-and-drink_33/index.html
+Saved to: pages/41
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/history_32/index.html
+Saved to: pages/42
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/horror_31/index.html
+Saved to: pages/43
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/humor_30/index.html
+Saved to: pages/44
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/adult-fiction_29/index.html
+Saved to: pages/45
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/parenting_28/index.html
+Saved to: pages/46
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/autobiography_27/index.html
+Saved to: pages/47
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/psychology_26/index.html
+Saved to: pages/48
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/art_25/index.html
+Saved to: pages/49
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/paranormal_24/index.html
+Saved to: pages/50
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/poetry_23/index.html
+Saved to: pages/51
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science_22/index.html
+Saved to: pages/52
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/young-adult_21/index.html
+Saved to: pages/53
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/new-adult_20/index.html
+Saved to: pages/54
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fantasy_19/index.html
+Saved to: pages/55
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/add-a-comment_18/index.html
+Saved to: pages/56
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sports-and-games_17/index.html
+Saved to: pages/57
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/science-fiction_16/index.html
+Saved to: pages/58
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/default_15/index.html
+Saved to: pages/59
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/music_14/index.html
+Saved to: pages/60
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/nonfiction_13/index.html
+Saved to: pages/61
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/religion_12/index.html
+Saved to: pages/62
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/childrens_11/index.html
+Saved to: pages/63
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/fiction_10/index.html
+Saved to: pages/64
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/womens-fiction_9/index.html
+Saved to: pages/65
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/romance_8/index.html
+Saved to: pages/66
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/philosophy_7/index.html
+Saved to: pages/67
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/classics_6/index.html
+Saved to: pages/68
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/sequential-art_5/index.html
+Saved to: pages/69
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/historical-fiction_4/index.html
+Saved to: pages/70
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/mystery_3/index.html
+Saved to: pages/71
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books/travel_2/index.html
+Saved to: pages/72
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/toscrape/catalogue/category/books_1/index.html
+Saved to: pages/73
+test with seedURL: letters, depth: 1 (with valgrind)
+==934== Memcheck, a memory error detector
+==934== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==934== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==934== Command: ./crawler http://cs50tse.cs.dartmouth.edu/tse/letters/index.html pages 1
+==934== 
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Saved to: pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Saved to: pages/2
+==934== 
+==934== HEAP SUMMARY:
+==934==     in use at exit: 0 bytes in 0 blocks
+==934==   total heap usage: 345 allocs, 345 frees, 82,125 bytes allocated
+==934== 
+==934== All heap blocks were freed -- no leaks are possible
+==934== 
+==934== For counts of detected and suppressed errors, rerun with: -v
+==934== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+test with seedURL: letters, depth: 0
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Saved to: pages/1
+test with seedURL: letters, depth: 1
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Saved to: pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Saved to: pages/2
+test with seedURL: letters, depth: 2
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Saved to: pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Saved to: pages/2
+Found: https://en.wikipedia.org/wiki/Algorithm
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+Saved to: pages/3
+test with seedURL: letters, depth: 3
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Saved to: pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Saved to: pages/2
+Found: https://en.wikipedia.org/wiki/Algorithm
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+Saved to: pages/3
+Found: https://en.wikipedia.org/wiki/Breadth-first_search
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+Saved to: pages/4
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+Saved to: pages/5
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+Saved to: pages/6
+test with seedURL: letters, depth: 4
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Saved to: pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Saved to: pages/2
+Found: https://en.wikipedia.org/wiki/Algorithm
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+Saved to: pages/3
+Found: https://en.wikipedia.org/wiki/Breadth-first_search
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+Saved to: pages/4
+Found: https://en.wikipedia.org/wiki/ENIAC
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/F.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/G.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/G.html
+Saved to: pages/5
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/F.html
+Saved to: pages/6
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+Saved to: pages/7
+Found: https://en.wikipedia.org/wiki/Depth-first_search
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+Saved to: pages/8
+Found: https://en.wikipedia.org/wiki/Computational_biology
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+test with seedURL: letters, depth: 5
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Saved to: pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Saved to: pages/2
+Found: https://en.wikipedia.org/wiki/Algorithm
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+Saved to: pages/3
+Found: https://en.wikipedia.org/wiki/Breadth-first_search
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+Saved to: pages/4
+Found: https://en.wikipedia.org/wiki/ENIAC
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/F.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/G.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/G.html
+Saved to: pages/5
+Found: https://en.wikipedia.org/wiki/Graph_traversal
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/H.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/H.html
+Saved to: pages/6
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/F.html
+Saved to: pages/7
+Found: https://en.wikipedia.org/wiki/Fast_Fourier_transform
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/H.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+Saved to: pages/8
+Found: https://en.wikipedia.org/wiki/Depth-first_search
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+Saved to: pages/9
+Found: https://en.wikipedia.org/wiki/Computational_biology
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+test with seedURL: letters page at depth 1
+invalid seedURL: make sure URL is valid and internal to our domain
+test with seedURL: letters page at depth 4
+invalid seedURL: make sure URL is valid and internal to our domain
+test with seedURL: wiki, depth: 0
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+Saved to: pages/1
+test with seedURL: wiki, depth: 1
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+Saved to: pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Computer_science.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./C_(programming_language).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Unix.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Dartmouth_College.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Hash_table.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Linked_list.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+Saved to: pages/2
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+Saved to: pages/3
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dartmouth_College.html
+Saved to: pages/4
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unix.html
+Saved to: pages/5
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/C_(programming_language).html
+Saved to: pages/6
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+Saved to: pages/7
+test with seedURL: wiki, depth: 2
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/index.html
+Saved to: pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Computer_science.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./C_(programming_language).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Unix.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Dartmouth_College.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Hash_table.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/./Linked_list.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+Saved to: pages/2
+Found: http://en.wikipedia.org/wiki/File:Question_book-new.svg
+Found: http://en.wikipedia.org/wiki/Wikipedia:Verifiability
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit
+Found: http://en.wikipedia.org/wiki/Help:Introduction_to_referencing/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computer_science.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Data_structure.html
+Found: http://en.wikipedia.org/wiki/Node_(computer_science)
+Found: http://en.wikipedia.org/wiki/Reference_(computer_science)
+Found: http://en.wikipedia.org/wiki/File:Singly-linked-list.svg
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Abstract_data_type.html
+Found: http://en.wikipedia.org/wiki/List_(abstract_data_type)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Stack_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Queue_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Associative_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/S-expression.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Array_data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Random_access.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Allen_Newell.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cliff_Shaw.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Herbert_A.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/RAND_Corporation.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Information_Processing_Language.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Artificial_intelligence.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/General_Problem_Solver.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/UNESCO.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Turing_Award.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Machine_translation.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Natural_language.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Victor_Yngve.html
+Found: http://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linguistics.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/LISP.html
+Found: http://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Communications_of_the_ACM.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/MIT_Lincoln_Laboratory.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Technical_Systems_Consultants.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Motorola_6800.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=2
+Found: http://en.wikipedia.org/wiki/Node_(computer_science)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_(programming_language).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CAR_and_CDR.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CAR_and_CDR.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=3
+Found: http://en.wikipedia.org/wiki/File:Singly-linked-list.svg
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=4
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Doubly_linked_list.html
+Found: http://en.wikipedia.org/wiki/File:Doubly-linked-list.svg
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/XOR_linked_list.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=5
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=6
+Found: http://en.wikipedia.org/wiki/Node_(computer_science)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Null_pointer.html
+Found: http://en.wikipedia.org/wiki/File:Circularly-linked-list.svg
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=7
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sentinel_node.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=8
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=9
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=10
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=11
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=12
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=13
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Array_data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Self-balancing_binary_search_tree.html
+Found: http://en.wikipedia.org/w/index.php?title=Random_access_list&amp;action=edit&amp;redlink=1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Amortized_analysis.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Fragmentation_(computer).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Amortized_analysis.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Array_data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Random_access.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sequential_access.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Heapsort.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Locality_of_reference.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Character_(computing).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Boolean_value.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Memory_pool.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unrolled_linked_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CDR_coding.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Josephus_problem.html
+Found: http://en.wikipedia.org/wiki/List_ranking
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Parallel_algorithm.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Self-balancing_binary_search_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/AVL_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Red-black_tree.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=14
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Recursion.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Merge_algorithm.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Iteration.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Tail-sharing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Persistent_data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_programming_language.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CAR_and_CDR.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=15
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/XOR_linked_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Persistent_data_structure.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=16
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Polygon.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Data_buffer.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/FIFO_(computing).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Time_sharing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Round-robin_scheduling.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Quad-edge_data_structure.html
+Found: http://en.wikipedia.org/w/index.php?title=Face-edge_data_structure&amp;action=edit&amp;redlink=1
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=17
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=18
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Pseudocode.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sentinel_value.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=19
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=20
+Found: http://en.wikipedia.org/wiki/Reference_(computer_science)
+Found: http://en.wikipedia.org/wiki/File:CPT-LinkedLists-addingnode.svg
+Found: http://en.wikipedia.org/wiki/File:CPT-LinkedLists-deletingnode.svg
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Asymptotic_time_complexity.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Append.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=21
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=22
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=23
+Found: http://en.wikipedia.org/wiki/Reference_(computer_science)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Array_data_type.html
+Found: http://en.wikipedia.org/wiki/Record_(computer_science)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Parallel_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Free_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Serialization.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Locality_of_reference.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_memory_allocation.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Big-O_notation.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Amortized_analysis.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=24
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Programming_language.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_programming_language.html
+Found: http://en.wikipedia.org/wiki/Scheme_(programming_language)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Functional_programming_language.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cons.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Car_and_cdr-2.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Car_and_cdr-2.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Abstract_data_type.html
+Found: http://en.wikipedia.org/wiki/Reference_(computer_science)
+Found: http://en.wikipedia.org/wiki/Record_(computer_science)
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=25
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Locality_of_reference.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=26
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=27
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linear_search.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Index_(database).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Red-black_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=28
+Found: http://en.wikipedia.org/w/index.php?title=Random_access_list&amp;action=edit&amp;redlink=1
+Found: http://en.wikipedia.org/w/index.php?title=Skew_binary_random_access_list&amp;action=edit&amp;redlink=1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Skew_binary_number_system.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Persistent_data_structure.html
+Found: http://en.wikipedia.org/w/index.php?title=Min-list&amp;action=edit&amp;redlink=1
+Found: http://en.wikipedia.org/wiki/Wikipedia:Please_clarify
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=29
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Stack_(data_structure).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Queue_(data_structure).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Skip_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unrolled_linked_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Heap_(data_structure).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Self-organizing_list.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=30
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=31
+Found: http://www.juniata.edu/faculty/kruse/cs240/syllabus.htm
+Found: http://www.juniata.edu/faculty/kruse/cs240/linkedlist2.htm
+Found: http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style
+Found: http://kjellkod.wordpress.com/2012/02/25/why-you-should-never-ever-ever-use-linked-list-in-your-code-again/
+Found: http://en.wikipedia.org/wiki/Robert_Sedgewick_(computer_scientist)
+Found: http://www.cs.uwaterloo.ca/research/tr/1999/09/CS-99-09.pdf
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0130858501
+Found: http://cs.oberlin.edu/~jwalker/refs/fpca95.ps
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=32
+Found: http://en.wikipedia.org/wiki/Wikipedia:Citing_sources
+Found: http://en.wikipedia.org/wiki/Wikipedia:Citing_sources
+Found: http://en.wikipedia.org/wiki/Wikipedia:WikiProject_Fact_and_Reference_Check
+Found: http://en.wikipedia.org/wiki/Wikipedia:When_to_cite
+Found: http://www.uoc.edu/in3/emath/docs/java/ch20.pdf
+Found: http://nist.gov/dads/HTML/linkedList.html
+Found: http://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0-13-280843-9
+Found: http://en.wikipedia.org/wiki/Help:CS1_errors
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0-07-282379-8
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Charles_E-2.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ronald_L.html
+Found: http://en.wikipedia.org/w/index.php?title=Stein,_Clifford&amp;action=edit&amp;redlink=1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Introduction_to_Algorithms.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0-262-03293-7
+Found: http://en.wikipedia.org/wiki/Help:CS1_errors
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Thomas_H.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Charles_E-2.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ronald_L.html
+Found: http://en.wikipedia.org/w/index.php?title=Stein,_Clifford&amp;action=edit&amp;redlink=1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Introduction_to_Algorithms.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0-262-03293-7
+Found: http://en.wikipedia.org/wiki/Help:CS1_errors
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Digital_object_identifier.html
+Found: http://dx.doi.org/10.1109%2FTHFE2.1961.4503292
+Found: http://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)
+Found: http://www-formal.stanford.edu/jmc/recursive.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Communications_of_the_ACM.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Digital_object_identifier.html
+Found: http://dx.doi.org/10.1145%2F367177.367199
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Donald_Knuth.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0-201-89683-4
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Allen_Newell.html
+Found: http://en.wikipedia.org/wiki/Help:CS1_errors
+Found: http://cslibrary.stanford.edu/103/LinkedListBasics.pdf
+Found: http://en.wikipedia.org/wiki/Robert_Sedgewick_(computer_scientist)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0-201-31452-5
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0-13-660911-2
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Maurice_Vincent_Wilkes.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Digital_object_identifier.html
+Found: http://dx.doi.org/10.1016%2F0066-4138(64)90013-8
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Maurice_Vincent_Wilkes.html
+Found: http://isis.poly.edu/kulesh/stuff/src/klist/
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=33
+Found: http://commons.wikimedia.org/wiki/Category:Lists
+Found: http://scanftree.com/Data_Structure/Circular
+Found: http://nist.gov/dads/HTML/linkedList.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dictionary_of_Algorithms_and_Data_Structures.html
+Found: http://cslibrary.stanford.edu/103/
+Found: http://cslibrary.stanford.edu/105/
+Found: http://opendatastructures.org/versions/edition-0.1g/ods-python/3_Linked_Lists.html
+Found: http://www.google.com/patents?vid=USPAT7028023
+Found: http://en.wikipedia.org/wiki/Template:Data_structures
+Found: http://en.wikipedia.org/wiki/Template_talk:Data_structures
+Found: http://en.wikipedia.org/w/index.php?title=Template:Data_structures&amp;action=edit
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Collection_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Container_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Abstract_data_type.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Associative_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Double-ended_priority_queue.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Double-ended_queue.html
+Found: http://en.wikipedia.org/wiki/List_(abstract_data_type)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Multimap.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Priority_queue.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Queue_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Set_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Set_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Disjoint-set_data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Stack_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Array_data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Bit_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Circular_buffer.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hashed_array_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sparse_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Association_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Skip_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unrolled_linked_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/XOR_linked_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Tree_(data_structure).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/B-tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_search_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/AA_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/AVL_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Red%e2%80%93black_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Self-balancing_binary_search_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Splay_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Heap_(data_structure).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_heap.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binomial_heap.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Fibonacci_heap.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/R-tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/R__tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/R%2b_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hilbert_R-tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Trie.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_tree_(persistent_data_structure).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Graph_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_decision_diagram.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Directed_acyclic_word_graph.html
+Found: http://en.wikipedia.org/wiki/List_of_data_structures
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;oldid=599615288
+Found: http://en.wikipedia.org/wiki/Help:Category
+Found: http://en.wikipedia.org/wiki/Category:Linked_lists
+Found: http://en.wikipedia.org/wiki/Category:Data_structures
+Found: http://en.wikipedia.org/wiki/Category:Articles_needing_additional_references_from_February_2014
+Found: http://en.wikipedia.org/wiki/Category:All_articles_needing_additional_references
+Found: http://en.wikipedia.org/wiki/Category:Wikipedia_articles_needing_clarification_from_October_2011
+Found: http://en.wikipedia.org/wiki/Category:Articles_lacking_in-text_citations_from_March_2012
+Found: http://en.wikipedia.org/wiki/Category:All_articles_lacking_in-text_citations
+Found: http://en.wikipedia.org/wiki/Category:Articles_with_inconsistent_citation_formats
+Found: http://en.wikipedia.org/wiki/Category:Pages_containing_cite_templates_with_deprecated_parameters
+Found: http://en.wikipedia.org/wiki/Category:Commons_category_with_local_link_different_than_on_Wikidata
+Found: http://en.wikipedia.org/wiki/Category:Articles_with_example_C_code
+Found: http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Linked+list&amp;type=signup
+Found: http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Linked+list
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+Found: http://en.wikipedia.org/wiki/Talk:Linked_list
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=history
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Main_Page.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Main_Page.html
+Found: http://en.wikipedia.org/wiki/Portal:Contents
+Found: http://en.wikipedia.org/wiki/Portal:Featured_content
+Found: http://en.wikipedia.org/wiki/Portal:Current_events
+Found: http://en.wikipedia.org/wiki/Special:Random
+Found: https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en
+Found: http://shop.wikimedia.org/
+Found: http://en.wikipedia.org/wiki/Help:Contents
+Found: http://en.wikipedia.org/wiki/Wikipedia:About
+Found: http://en.wikipedia.org/wiki/Wikipedia:Community_portal
+Found: http://en.wikipedia.org/wiki/Special:RecentChanges
+Found: http://en.wikipedia.org/wiki/Wikipedia:Contact_us
+Found: http://en.wikipedia.org/wiki/Special:WhatLinksHere/Linked_list
+Found: http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Linked_list
+Found: http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard
+Found: http://en.wikipedia.org/wiki/Special:SpecialPages
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;oldid=599615288
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=info
+Found: http://www.wikidata.org/wiki/Q7003418
+Found: http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Linked_list&amp;id=599615288
+Found: http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Linked+list
+Found: http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Linked+list&amp;oldid=599615288&amp;writer=rl
+Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;printable=yes
+Found: http://ar.wikipedia.org/wiki/قائمة_متصلة
+Found: http://ca.wikipedia.org/wiki/Llista_(estructura_de_dades)
+Found: http://cs.wikipedia.org/wiki/Lineární_seznam
+Found: http://da.wikipedia.org/wiki/Liste_(datastruktur)
+Found: http://de.wikipedia.org/wiki/Liste_(Datenstruktur)
+Found: http://es.wikipedia.org/wiki/Lista_(informática)
+Found: http://fa.wikipedia.org/wiki/لیست_پیوندی
+Found: http://fr.wikipedia.org/wiki/Liste_chaînée
+Found: http://ko.wikipedia.org/wiki/연결_리스트
+Found: http://hr.wikipedia.org/wiki/Vezana_lista
+Found: http://id.wikipedia.org/wiki/Senarai_berantai
+Found: http://is.wikipedia.org/wiki/Keðjulisti
+Found: http://it.wikipedia.org/wiki/Lista_concatenata
+Found: http://he.wikipedia.org/wiki/רשימה_מקושרת
+Found: http://lv.wikipedia.org/wiki/Saistīts_saraksts
+Found: http://lt.wikipedia.org/wiki/Tiesinis_sąrašas
+Found: http://hu.wikipedia.org/wiki/Láncolt_lista
+Found: http://ms.wikipedia.org/wiki/Senarai_berpaut
+Found: http://nl.wikipedia.org/wiki/Gelinkte_lijst
+Found: http://ja.wikipedia.org/wiki/連結リスト
+Found: http://no.wikipedia.org/wiki/Lenket_liste
+Found: http://pl.wikipedia.org/wiki/Lista
+Found: http://pt.wikipedia.org/wiki/Lista_ligada
+Found: http://ru.wikipedia.org/wiki/Связный_список
+Found: http://sl.wikipedia.org/wiki/Povezani_seznam
+Found: http://fi.wikipedia.org/wiki/Linkitetty_lista
+Found: http://sv.wikipedia.org/wiki/Länkad_lista
+Found: http://th.wikipedia.org/wiki/รายการโยง
+Found: http://tr.wikipedia.org/wiki/Bağlı_liste
+Found: http://uk.wikipedia.org/wiki/Зв%27язаний_список
+Found: http://zh.wikipedia.org/wiki/链表
+Found: http://www.wikidata.org/wiki/Q7003418
+Found: http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License
+Found: http://creativecommons.org/licenses/by-sa/3.0/
+Found: http://wikimediafoundation.org/wiki/Terms_of_Use
+Found: http://wikimediafoundation.org/wiki/Privacy_policy
+Found: http://www.wikimediafoundation.org/
+Found: http://wikimediafoundation.org/wiki/Privacy_policy
+Found: http://en.wikipedia.org/wiki/Wikipedia:About
+Found: http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer
+Found: http://en.wikipedia.org/wiki/Wikipedia:Contact_us
+Found: https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute
+Found: http://en.m.wikipedia.org/wiki/Linked_list
+Found: http://wikimediafoundation.org/
+Found: http://www.mediawiki.org/
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Main_Page.html
+Saved to: pages/3
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Directed_acyclic_word_graph.html
+Saved to: pages/4
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_decision_diagram.html
+Saved to: pages/5
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Graph_(abstract_data_type).html
+Saved to: pages/6
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_tree_(persistent_data_structure).html
+Saved to: pages/7
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Trie.html
+Saved to: pages/8
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hilbert_R-tree.html
+Saved to: pages/9
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/R%2b_tree.html
+Saved to: pages/10
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/R__tree.html
+Saved to: pages/11
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/R-tree.html
+Saved to: pages/12
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Fibonacci_heap.html
+Saved to: pages/13
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binomial_heap.html
+Saved to: pages/14
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_heap.html
+Saved to: pages/15
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Splay_tree.html
+Saved to: pages/16
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Red%e2%80%93black_tree.html
+Saved to: pages/17
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/AA_tree.html
+Saved to: pages/18
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_search_tree.html
+Saved to: pages/19
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/B-tree.html
+Saved to: pages/20
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Tree_(data_structure).html
+Saved to: pages/21
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Association_list.html
+Saved to: pages/22
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_data_structure.html
+Saved to: pages/23
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sparse_array.html
+Saved to: pages/24
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hashed_array_tree.html
+Saved to: pages/25
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Circular_buffer.html
+Saved to: pages/26
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Bit_array.html
+Saved to: pages/27
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Disjoint-set_data_structure.html
+Saved to: pages/28
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Set_(abstract_data_type).html
+Saved to: pages/29
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Priority_queue.html
+Saved to: pages/30
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Multimap.html
+Saved to: pages/31
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Double-ended_queue.html
+Saved to: pages/32
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Double-ended_priority_queue.html
+Saved to: pages/33
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Container_(abstract_data_type).html
+Saved to: pages/34
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Collection_(abstract_data_type).html
+Saved to: pages/35
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dictionary_of_Algorithms_and_Data_Structures.html
+Saved to: pages/36
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Maurice_Vincent_Wilkes.html
+Saved to: pages/37
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Donald_Knuth.html
+Saved to: pages/38
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Digital_object_identifier.html
+Saved to: pages/39
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Thomas_H.html
+Saved to: pages/40
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Introduction_to_Algorithms.html
+Saved to: pages/41
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ronald_L.html
+Saved to: pages/42
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Charles_E-2.html
+Saved to: pages/43
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Saved to: pages/44
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Self-organizing_list.html
+Saved to: pages/45
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Heap_(data_structure).html
+Saved to: pages/46
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_tree.html
+Saved to: pages/47
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Skip_list.html
+Saved to: pages/48
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Queue_(data_structure).html
+Saved to: pages/49
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Stack_(data_structure).html
+Saved to: pages/50
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Skew_binary_number_system.html
+Saved to: pages/51
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Index_(database).html
+Saved to: pages/52
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linear_search.html
+Saved to: pages/53
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Car_and_cdr-2.html
+Saved to: pages/54
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cons.html
+Saved to: pages/55
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Functional_programming_language.html
+Saved to: pages/56
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Programming_language.html
+Saved to: pages/57
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Big-O_notation.html
+Saved to: pages/58
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_memory_allocation.html
+Saved to: pages/59
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Serialization.html
+Saved to: pages/60
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Free_list.html
+Saved to: pages/61
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Parallel_array.html
+Saved to: pages/62
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Array_data_type.html
+Saved to: pages/63
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Append.html
+Saved to: pages/64
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Asymptotic_time_complexity.html
+Saved to: pages/65
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sentinel_value.html
+Saved to: pages/66
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Pseudocode.html
+Saved to: pages/67
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Quad-edge_data_structure.html
+Saved to: pages/68
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Round-robin_scheduling.html
+Saved to: pages/69
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Time_sharing.html
+Saved to: pages/70
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/FIFO_(computing).html
+Saved to: pages/71
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Data_buffer.html
+Saved to: pages/72
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Polygon.html
+Saved to: pages/73
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_programming_language.html
+Saved to: pages/74
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Persistent_data_structure.html
+Saved to: pages/75
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Tail-sharing.html
+Saved to: pages/76
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Iteration.html
+Saved to: pages/77
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Merge_algorithm.html
+Saved to: pages/78
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Recursion.html
+Saved to: pages/79
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Red-black_tree.html
+Saved to: pages/80
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/AVL_tree.html
+Saved to: pages/81
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Parallel_algorithm.html
+Saved to: pages/82
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Josephus_problem.html
+Saved to: pages/83
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CDR_coding.html
+Saved to: pages/84
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unrolled_linked_list.html
+Saved to: pages/85
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Memory_pool.html
+Saved to: pages/86
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Boolean_value.html
+Saved to: pages/87
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Character_(computing).html
+Saved to: pages/88
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Locality_of_reference.html
+Saved to: pages/89
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Heapsort.html
+Saved to: pages/90
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sequential_access.html
+Saved to: pages/91
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Fragmentation_(computer).html
+Saved to: pages/92
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Amortized_analysis.html
+Saved to: pages/93
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Self-balancing_binary_search_tree.html
+Saved to: pages/94
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_array.html
+Saved to: pages/95
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sentinel_node.html
+Saved to: pages/96
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Null_pointer.html
+Saved to: pages/97
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/XOR_linked_list.html
+Saved to: pages/98
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Doubly_linked_list.html
+Saved to: pages/99
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CAR_and_CDR.html
+Saved to: pages/100
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_(programming_language).html
+Saved to: pages/101
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Motorola_6800.html
+Saved to: pages/102
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Technical_Systems_Consultants.html
+Saved to: pages/103
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/MIT_Lincoln_Laboratory.html
+Saved to: pages/104
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Communications_of_the_ACM.html
+Saved to: pages/105
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/LISP.html
+Saved to: pages/106
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linguistics.html
+Saved to: pages/107
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Victor_Yngve.html
+Saved to: pages/108
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Natural_language.html
+Saved to: pages/109
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Machine_translation.html
+Saved to: pages/110
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Turing_Award.html
+Saved to: pages/111
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/UNESCO.html
+Saved to: pages/112
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/General_Problem_Solver.html
+Saved to: pages/113
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Artificial_intelligence.html
+Saved to: pages/114
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Information_Processing_Language.html
+Saved to: pages/115
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/RAND_Corporation.html
+Saved to: pages/116
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Herbert_A.html
+Saved to: pages/117
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cliff_Shaw.html
+Saved to: pages/118
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Allen_Newell.html
+Saved to: pages/119
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Random_access.html
+Saved to: pages/120
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Array_data_structure.html
+Saved to: pages/121
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/S-expression.html
+Saved to: pages/122
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Associative_array.html
+Saved to: pages/123
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Queue_(abstract_data_type).html
+Saved to: pages/124
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Stack_(abstract_data_type).html
+Saved to: pages/125
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Abstract_data_type.html
+Saved to: pages/126
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Data_structure.html
+Saved to: pages/127
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+Saved to: pages/128
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_tree_(disambiguation).html
+Found: http://en.wikipedia.org/wiki/List_of_data_structures
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Associative_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Time_complexity.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Big_O_notation.html
+Found: http://en.wikipedia.org/wiki/File:Hash_table_3_1_1_0_1_0_0_SP.svg
+Found: http://en.wikipedia.org/wiki/File:Hash_table_3_1_1_0_1_0_0_SP.svg
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Computing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Associative_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unique_key.html
+Found: http://en.wikipedia.org/wiki/Value_(computer_science)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_function.html
+Found: http://en.wikipedia.org/wiki/Collision_(computer_science)
+Found: http://en.wikipedia.org/wiki/Instruction_(computer_science)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Amortized_analysis.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Search_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Table_(computing).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Software.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Database_index.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cache_(computing).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Set_(abstract_data_type).html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_function.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Power_of_two.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Mask_(computing).html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=2
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Uniform_distribution_(discrete).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Pearson%27s_chi-squared_test.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Power_of_two.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Prime_number.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Open_addressing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cryptographic_hash_function.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Modulo_operation.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Mask_(computing).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Denial_of_service_attack.html
+Found: http://en.wikipedia.org/wiki/Salt_(cryptography)
+Found: http://en.wikipedia.org/wiki/Universal_hash_function
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=3
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Perfect_hash_function.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Perfect_hash_function.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Constant_time.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=4
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Constant_time.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=5
+Found: http://en.wikipedia.org/wiki/Collision_(computer_science)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Birthday_problem.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=6
+Found: http://en.wikipedia.org/wiki/File:Hash_table_5_0_1_1_1_1_1_LL.svg
+Found: http://en.wikipedia.org/wiki/File:Hash_table_5_0_1_1_1_1_1_LL.svg
+Found: http://en.wikipedia.org/wiki/List_(abstract_data_type)
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=7
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/SUHA.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Graceful_degradation.html
+Found: http://en.wikipedia.org/wiki/Wikipedia:Citation_needed
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sequence.html
+Found: http://en.wikipedia.org/wiki/Wikipedia:Citation_needed
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Move-to-front_heuristic.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Locality_of_reference.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=8
+Found: http://en.wikipedia.org/wiki/File:Hash_table_5_0_1_1_1_1_0_LL.svg
+Found: http://en.wikipedia.org/wiki/File:Hash_table_5_0_1_1_1_1_0_LL.svg
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=9
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Self-balancing_binary_search_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Big_O_notation.html
+Found: http://en.wikipedia.org/w/index.php?title=Array_hash_table&amp;action=edit&amp;redlink=1
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CPU_cache.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Translation_lookaside_buffer.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_perfect_hashing.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=10
+Found: http://en.wikipedia.org/wiki/File:Hash_table_5_0_1_1_1_1_0_SP.svg
+Found: http://en.wikipedia.org/wiki/File:Hash_table_5_0_1_1_1_1_0_SP.svg
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Open_addressing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linear_probing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Quadratic_probing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Double_hashing.html
+Found: http://en.wikipedia.org/wiki/File:Hash_table_average_insertion_time.png
+Found: http://en.wikipedia.org/wiki/File:Hash_table_average_insertion_time.png
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Locality_of_reference.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Serialization.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CPU_cache.html
+Found: http://en.wikipedia.org/wiki/Wikipedia:Citation_needed
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=11
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Coalesced_hashing.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=12
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cuckoo_hashing.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=13
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=14
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/2-choice_hashing.html
+Found: http://en.wikipedia.org/w/index.php?title=Power_of_two_choices&amp;action=edit&amp;redlink=1
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=15
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hopscotch_hashing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cuckoo_hashing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linear_probing.html
+Found: http://en.wikipedia.org/w/index.php?title=Concurrent_hash_table&amp;action=edit&amp;redlink=1
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=16
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Java_(programming_language).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Space-time_tradeoff.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Space-time_tradeoff.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=17
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_memory_allocation.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Amortized_analysis.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=18
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Real-time_system.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=19
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Monotonic_function.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Consistent_hashing.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=20
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linear_hashing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Consistent_hashing.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=21
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Random_variable.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Uniform_distribution_(discrete).html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=22
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=23
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=24
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Spell_checker.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Trie.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Finite_automata.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Judy_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Locality_of_reference.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/CPU_cache.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linear_search.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Black_hat_hacking.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Denial_of_service_attack.html
+Found: http://en.wikipedia.org/wiki/Universal_hashing
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=25
+Found: http://en.wikipedia.org/wiki/File:Question_book-new.svg
+Found: http://en.wikipedia.org/wiki/Wikipedia:Citing_sources
+Found: http://en.wikipedia.org/wiki/Wikipedia:Verifiability
+Found: http://en.wikipedia.org/wiki/Help:Introduction_to_referencing/1
+Found: http://en.wikipedia.org/wiki/Wikipedia:Verifiability
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=26
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Associative_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/String_(computing).html
+Found: http://en.wikipedia.org/wiki/Interpreter_(computer_science)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Programming_language.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/AWK.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Perl.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/PHP.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Multimap.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=27
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Disk_drive.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Index_(database).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dbm.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/B-tree.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=28
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Cache_(computing).html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=29
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Set_data_structure.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=30
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Perl.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Python_(programming_language).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/JavaScript.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ruby_(programming_language).html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=31
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lisp_(programming_language).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_consing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Expression_tree.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=32
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/String_interning.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=33
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=34
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Library_(computing).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/C%2b%2b11.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unordered_map_(C%2b%2b).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/PHP.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Daniel_J.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Python_(programming_language).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Perl.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=35
+Found: http://code.google.com/p/sparsehash/
+Found: http://www.sunrisetel.net/software/devtools/sunrise-data-dictionary.shtml
+Found: http://uthash.sourceforge.net/
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=36
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Gene_Amdahl.html
+Found: http://en.wikipedia.org/wiki/Nathaniel_Rochester_(computer_scientist)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Arthur_Samuel.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=37
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Rabin%e2%80%93Karp_string_search_algorithm.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Stable_hashing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Consistent_hashing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Extendible_hashing.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lazy_deletion.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Pearson_hashing.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=38
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Bloom_filter.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Distributed_hash_table.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_array_mapped_trie.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Trie.html
+Found: http://en.wikipedia.org/w/index.php?title=Array_mapped_trie&amp;action=edit&amp;redlink=1
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=39
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Thomas_H.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Introduction_to_Algorithms.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/978-0-262-03384-8
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Charles_E-2.html
+Found: http://videolectures.net/mit6046jf05_leiserson_lec13/
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Donald_Knuth.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0-201-89685-0
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Thomas_H.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Charles_E-2.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Ronald_L.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Clifford_Stein.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Introduction_to_Algorithms.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/978-0-262-53196-2
+Found: http://en.wikipedia.org/wiki/Help:CS1_errors
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Karl_Pearson.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Robin_Plackett.html
+Found: http://www.concentric.net/~Ttwang/tech/primehash.htm
+Found: http://www.springerlink.com/content/b61721172558qt03/
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Digital_object_identifier.html
+Found: http://dx.doi.org/10.1007%2F11575832_11
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/978-3-540-29740-6
+Found: http://www.springerlink.com/content/86574173183j6565/
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Digital_object_identifier.html
+Found: http://dx.doi.org/10.1007%2Fs00778-010-0183-9
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Serial_Number.html
+Found: http://www.worldcat.org/issn/1066-8888
+Found: http://crpit.com/confpapers/CRPITV91Askitis.pdf
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/978-1-920682-72-9
+Found: http://courses.csail.mit.edu/6.897/spring03/scribe_notes/L2/lecture2.pdf
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0-13-199746-7
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Pedro_Celis.html
+Found: https://cs.uwaterloo.ca/research/tr/1986/CS-86-14.pdf
+Found: http://codecapsule.com/2013/11/11/robin-hood-hashing/
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Digital_object_identifier.html
+Found: http://dx.doi.org/10.1145%2F1103963.1103965
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Pedro_Celis.html
+Found: http://www.duluth.umn.edu/~ddunham/cs4521s09/notes/ch11.txt
+Found: http://events.ccc.de/congress/2011/Fahrplan/attachments/2007_28C3_Effective_DoS_on_web_application_platforms.pdf
+Found: http://www.cs.rice.edu/~scrosby/hash/CrosbyWallach_UsenixSec2003.pdf
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sartaj_Sahni.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/1-58488-435-5
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=40
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Book_Number.html
+Found: http://en.wikipedia.org/wiki/Special:BookSources/0-471-73884-0
+Found: http://en.wikipedia.org/wiki/Help:CS1_errors
+Found: http://en.wikipedia.org/wiki/Help:CS1_errors
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit&amp;section=41
+Found: http://commons.wikimedia.org/wiki/Category:Hash_tables
+Found: http://www.burtleburtle.net/bob/hash/doobs.html
+Found: http://www.sparknotes.com/cs/searching/hashtables/summary.html
+Found: http://www.azillionmonkeys.com/qed/hash.html
+Found: http://blog.griddynamics.com/2011/03/ultimate-sets-and-maps-for-java-part-i.html
+Found: http://libhashish.sourceforge.net/
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/NIST.html
+Found: http://www.nist.gov/dads/HTML/hashtab.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/ICI_programming_language.html
+Found: http://ici.cvs.sourceforge.net/ici/ici/set.c?view=markup
+Found: http://www.relisoft.com/book/lang/pointer/8hash.html
+Found: http://compgeom.cs.uiuc.edu/~jeffe/teaching/373/notes/06-hashing.pdf
+Found: http://task3.cc/308/hash-maps-with-linear-probing-and-separate-chaining/
+Found: http://opendatastructures.org/versions/edition-0.1e/ods-java/5_Hash_Tables.html
+Found: http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-7-hashing-hash-functions/
+Found: http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-8-universal-hashing-perfect-hashing/
+Found: http://talkera.org.cp-in-1.webhostbox.net/wp/?p=45
+Found: http://www.lampos.net/sort-hashmap
+Found: http://www.cirvirlab.com/index.php/c-sharp-code-examples/113-c-sharp-hashtable-example.html
+Found: http://en.wikipedia.org/wiki/Template:Data_structures
+Found: http://en.wikipedia.org/wiki/Template_talk:Data_structures
+Found: http://en.wikipedia.org/w/index.php?title=Template:Data_structures&amp;action=edit
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Collection_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Container_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Abstract_data_type.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Associative_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Double-ended_priority_queue.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Double-ended_queue.html
+Found: http://en.wikipedia.org/wiki/List_(abstract_data_type)
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Multimap.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Priority_queue.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Queue_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Set_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Set_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Disjoint-set_data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Stack_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Array_data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Bit_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Circular_buffer.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Dynamic_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hashed_array_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sparse_array.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_data_structure.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Association_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Linked_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Skip_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unrolled_linked_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/XOR_linked_list.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Tree_(data_structure).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/B-tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_search_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/AA_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/AVL_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Red%e2%80%93black_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Self-balancing_binary_search_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Splay_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Heap_(data_structure).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_heap.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binomial_heap.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Fibonacci_heap.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/R-tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/R__tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/R%2b_tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hilbert_R-tree.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Trie.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_tree_(persistent_data_structure).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Graph_(abstract_data_type).html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Binary_decision_diagram.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Directed_acyclic_word_graph.html
+Found: http://en.wikipedia.org/wiki/List_of_data_structures
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;oldid=601851019
+Found: http://en.wikipedia.org/wiki/Help:Category
+Found: http://en.wikipedia.org/wiki/Category:Hashing
+Found: http://en.wikipedia.org/wiki/Category:Search_algorithms
+Found: http://en.wikipedia.org/wiki/Category:Data_structures
+Found: httfailed to fetch http://cs50tse.cs.dartmouth.edu/tse/wikipedia/.html
+p://en.wikipedia.org/wiki/Category:Pages_containing_cite_templates_with_deprecated_parameters
+Found: http://en.wikipedia.org/wiki/Category:Use_mdy_dates_from_January_2013
+Found: http://en.wikipedia.org/wiki/Category:All_articles_with_unsourced_statements
+Found: http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_January_2014
+Found: http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_April_2011
+Found: http://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_March_2012
+Found: http://en.wikipedia.org/wiki/Category:Articles_needing_additional_references_from_July_2013
+Found: http://en.wikipedia.org/wiki/Category:All_articles_needing_additional_references
+Found: http://en.wikipedia.org/wiki/Category:Commons_category_with_local_link_same_as_on_Wikidata
+Found: http://en.wikipedia.org/wiki/Category:Articles_with_example_C_code
+Found: http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Hash+table&amp;type=signup
+Found: http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Hash+table
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+Found: http://en.wikipedia.org/wiki/Talk:Hash_table
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_table.html
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=edit
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=history
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Main_Page.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Main_Page.html
+Found: http://en.wikipedia.org/wiki/Portal:Contents
+Found: http://en.wikipedia.org/wiki/Portal:Featured_content
+Found: http://en.wikipedia.org/wiki/Portal:Current_events
+Found: http://en.wikipedia.org/wiki/Special:Random
+Found: https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en
+Found: http://shop.wikimedia.org/
+Found: http://en.wikipedia.org/wiki/Help:Contents
+Found: http://en.wikipedia.org/wiki/Wikipedia:About
+Found: http://en.wikipedia.org/wiki/Wikipedia:Community_portal
+Found: http://en.wikipedia.org/wiki/Special:RecentChanges
+Found: http://en.wikipedia.org/wiki/Wikipedia:Contact_us
+Found: http://en.wikipedia.org/wiki/Special:WhatLinksHere/Hash_table
+Found: http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Hash_table
+Found: http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard
+Found: http://en.wikipedia.org/wiki/Special:SpecialPages
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;oldid=601851019
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;action=info
+Found: http://www.wikidata.org/wiki/Q207440
+Found: http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Hash_table&amp;id=601851019
+Found: http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Hash+table
+Found: http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Hash+table&amp;oldid=601851019&amp;writer=rl
+Found: http://en.wikipedia.org/w/index.php?title=Hash_table&amp;printable=yes
+Found: http://ar.wikipedia.org/wiki/جدول_هاش
+Found: http://bg.wikipedia.org/wiki/Хеш-таблица
+Found: http://cs.wikipedia.org/wiki/Hašovací_tabulka
+Found: http://da.wikipedia.org/wiki/Hashtabel
+Found: http://de.wikipedia.org/wiki/Hashtabelle
+Found: http://et.wikipedia.org/wiki/Paisktabel
+Found: http://el.wikipedia.org/wiki/Πίνακας_κατακερματισμού
+Found: http://es.wikipedia.org/wiki/Tabla_hash
+Found: http://fa.wikipedia.org/wiki/جدول_درهم‌سازی
+Found: http://fr.wikipedia.org/wiki/Table_de_hachage
+Found: http://ko.wikipedia.org/wiki/해시_테이블
+Found: http://hr.wikipedia.org/wiki/Hash_tablica
+Found: http://it.wikipedia.org/wiki/Hash_table
+Found: http://he.wikipedia.org/wiki/טבלת_גיבוב
+Found: http://lv.wikipedia.org/wiki/Heštabula
+Found: http://lt.wikipedia.org/wiki/Dėstymo_lentelė
+Found: http://hu.wikipedia.org/wiki/Hash_tábla
+Found: http://ml.wikipedia.org/wiki/ഹാഷ്_ടേബിൾ
+Found: http://nl.wikipedia.org/wiki/Hashtabel
+Found: http://ja.wikipedia.org/wiki/ハッシュテーブル
+Found: http://no.wikipedia.org/wiki/Hashtabell
+Found: http://nn.wikipedia.org/wiki/Hashtabell
+Found: http://pl.wikipedia.org/wiki/Tablica_mieszająca
+Found: http://pt.wikipedia.org/wiki/Tabela_de_dispersão
+Found: http://ru.wikipedia.org/wiki/Хеш-таблица
+Found: http://simple.wikipedia.org/wiki/Hash_table
+Found: http://sk.wikipedia.org/wiki/Hašovacia_tabuľka
+Found: http://sr.wikipedia.org/wiki/Хеш_табела
+Found: http://fi.wikipedia.org/wiki/Hajautustaulu
+Found: http://sv.wikipedia.org/wiki/Hashtabell
+Found: http://th.wikipedia.org/wiki/ตารางแฮช
+Found: http://tr.wikipedia.org/wiki/Komut_çizelgesi
+Found: http://uk.wikipedia.org/wiki/Хеш-таблиця
+Found: http://vi.wikipedia.org/wiki/Bảng_băm
+Found: http://zh.wikipedia.org/wiki/哈希表
+Found: http://www.wikidata.org/wiki/Q207440
+Found: http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License
+Found: http://creativecommons.org/licenses/by-sa/3.0/
+Found: http://wikimediafoundation.org/wiki/Terms_of_Use
+Found: http://wikimediafoundation.org/wiki/Privacy_policy
+Found: http://www.wikimediafoundation.org/
+Found: http://wikimediafoundation.org/wiki/Privacy_policy
+Found: http://en.wikipedia.org/wiki/Wikipedia:About
+Found: http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer
+Found: http://en.wikipedia.org/wiki/Wikipedia:Contact_us
+Found: https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute
+Found: http://en.m.wikipedia.org/wiki/Hash_table
+Found: http://wikimediafoundation.org/
+Found: http://www.mediawiki.org/
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/ICI_programming_language.html
+Saved to: pages/129
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/NIST.html
+Saved to: pages/130
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Sartaj_Sahni.html
+Saved to: pages/131
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Pedro_Celis.html
+Saved to: pages/132
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/International_Standard_Serial_Number.html
+Saved to: pages/133
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Robin_Plackett.html
+Saved to: pages/134
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Karl_Pearson.html
+Saved to: pages/135
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Clifford_Stein.html
+Saved to: pages/136
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Hash_array_mapped_trie.html
+Saved to: pages/137
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Distributed_hash_table.html
+Saved to: pages/138
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Bloom_filter.html
+Saved to: pages/139
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Pearson_hashing.html
+Saved to: pages/140
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Lazy_deletion.html
+Saved to: pages/141
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Extendible_hashing.html
+Saved to: pages/142
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Stable_hashing.html
+Saved to: pages/143
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Rabin%e2%80%93Karp_string_search_algorithm.html
+Saved to: pages/144
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Arthur_Samuel.html
+Saved to: pages/145
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Gene_Amdahl.html
+Saved to: pages/146
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Daniel_J.html
+Saved to: pages/147
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Unordered_map_(C%2b%2b).html
+Saved to: pages/148
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/C%2b%2b11.html
+Saved to: pages/149
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Library_(computing).html
+Saved to: pages/150
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/String_interning.html
+Saved to: pages/151
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Expression_tree.html
+Saved to: pages/152failed to fetch http://cs50tse.cs.dartmouth.edu/tse/wikipedia/Pearson%27s_chi-squared_test.html
