@@ -2,4 +2,5 @@ crawler
 .DS_Store
 *.o
 
+# Ignore pageDirectory
 pages
