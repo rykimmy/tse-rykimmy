@@ -11,42 +11,28 @@
 #include "/thayerfs/home/f004qsx/cs50/labs/tse-rykimmy/libcs50/hashtable.h"
 #include "/thayerfs/home/f004qsx/cs50/labs/tse-rykimmy/libcs50/memory.h"
 
-//thayerfs/home/f004qsx/cs50/labs
-
 bool check_dir(char* filename) {
-    
     FILE *fp = fopen(filename, "w");
-
-    if (fopen(fp, "w") == NULL) {
-        fclose(fp);
+    if (fp == NULL) {
+        fprintf(stderr, "check_dir(): cannot open file for writing\n");
         free(filename);
+        fclose(fp);
         return false;
     }
-    else {
-        fclose(fp);
-        free(filename);
-        return true;
-    }
-    // CHECK - DO I HAVE TO FREE THE MEMORY HERE?
+    fclose(fp);
+    free(filename);
+    return true;
 }
 
-void save_page(webpage_t *webpage, int id, const char* pageDirectory) {
-    char* filename = assertp(malloc(strlen(pageDirectory) + 2), "file name");
-    sprintf(filename, "%s/%d", pageDirectory, id);
+void save_page(webpage_t *webpage, char* filename) {
     FILE *fp = fopen(filename, "w");
-    
-    assertp(fp, "cannot open file for writing\n");
-    fprintf(fp, "%s\n%d\n%s", webpage_getURL(webpage), webpage_getDepth(webpage), webpage_getHTML(webpage));
 
-    // CHECK – format; if assertp exits, do we still need to close the file?
-    // if (fp == NULL) {
-    //     fprintf(stderr, "cannot open file for writing\n");
-    //     fclose(fp);
-    //     exit(1);
-    // }
-    // else {
-    //     fprintf(fp, "%s\n%d\n%s", webpage_getURL(webpage), webpage_getDepth(webpage), webpage_getHTML(webpage));
-    // }
-    free()
+    if (fp == NULL) {
+        fprintf(stderr, "save_page(): cannot open file for writing\n");
+        fclose(fp);
+        exit(1);
+    }
+    
+    fprintf(fp, "%s\n%d\n%s", webpage_getURL(webpage), webpage_getDepth(webpage), webpage_getHTML(webpage));
 	fclose(fp);
 }
