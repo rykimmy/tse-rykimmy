@@ -52,3 +52,37 @@ void save_page(webpage_t *webpage, char* filename) {
     fprintf(fp, "%s\n%d\n%s", webpage_getURL(webpage), webpage_getDepth(webpage), webpage_getHTML(webpage));
 	fclose(fp);
 }
+
+/*********************** init_dir *************************/
+// see pagedir.h for details
+bool is_crawlerdir(const char* pageDirectory) {
+    // Create filename in format: 'pageDirectory/.crawler'
+    char* filename = calloc(strlen(pageDirectory) + strlen("/.crawler") + 1, sizeof(char));
+    sprintf(filename, "%s/.crawler", pageDirectory);
+    assertp(filename, "init_dir(): invalid filename creation\n");
+
+    // Open new file and react accordingly based on success
+    FILE *fp;
+    if ((fp = fopen(filename, "w")) == NULL) {
+        fprintf(stderr, "init_dir(): invalid page directory\n");
+        fclose(fp);
+        free(filename);
+        return false;
+    }
+
+    fclose(fp);
+    free(filename);
+    return true;
+}
+// it reads page from file into a webpage structure, 
+// and returns the webpage structure
+webpage_t* load_page(FILE *fp) {
+    if (fp == NULL) {
+        fprintf(stderr, "load_page() failed: null file pointer\n");
+        return NULL;
+    }
+    // CHECK – syntax; is this correct?
+    webpage_t *new = webpage_new(freadlinep(fp), freadlinep(fp), freadfilep(fp));
+    assertp(new, "load_page() failed: could not create new webpage\n");
+    return new;
+}
