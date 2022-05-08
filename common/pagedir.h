@@ -48,3 +48,14 @@ void save_page(webpage_t *webpage, char* filename);
  *   false if failed or file does not exist
  */
 bool init_dir(const char* pageDirectory);
+
+/**************** load_page ****************/
+/* If pointer fp is NULL, print error message to stderr and return NULL,
+ * otherwise, create and return a new webpage using given file pointer
+ * We assume:
+ *   file pointer points to a file containing a webpage
+ * We return:
+ *   pointer to webpage if success
+ *   NULL if error
+ */
+webpage_t* load_page(FILE *fp);

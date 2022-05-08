@@ -1,10 +1,10 @@
 /*
-indexer.c – 
+indexer.c – goes through all page files in pageDirectory and builds an index that is outputted to given indexFilename
 
 Usage: ./indexer pageDirectory indexFilename
 
-Input:
-Output:
+Input: nothing other than command-line arguments
+Output: error messages
 
 Ryan Kim
 CS50, 22S
@@ -14,8 +14,9 @@ CS50, 22S
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include <../common/pagedir.h>
-#include <../common/index.h>
+#include "../common/pagedir.h"
+#include "../common/index.h"
+#include "../common/word.h"
 
 int main(const int argc, char *argv[]) {
     int status = 0;
@@ -30,7 +31,6 @@ int main(const int argc, char *argv[]) {
     strcpy(pageDirectory, argv[1]);
     assertp(pageDirectory, "invalid pageDirectory\n");
     
-    // CHECK – do we change check_dir in pagedir.c to check if it has the "/.crawler" file?
     if (!is_crawlerdir(pageDirectory)) {
         fprintf(stderr, "invalid arg 2: cannot find page directory\n");
         free(pageDirectory);
@@ -43,20 +43,31 @@ int main(const int argc, char *argv[]) {
     strcpy(indexFilename, argv[2]);
     assertp(indexFilename, "invalid indexFilename\n");
 
-    FILE *fp = fopen(indexFilename, "w");
-    assertp(fp, "failed to open indexFilename\n");
+    // Building index
+    index_t *index = index_build(pageDirectory);
 
-    // The shit
+    // Save index
+    if (!index_save(index, indexFilename)) {
+        fprintf(stderr, "index_save() failed\n");
+        status++;
+        return status;
+    }
 
-    fclose(fp);
+    // Clean up
+    index_delete(index);
+    free(indexFilename);
     free(pageDirectory);
     return status;
 }
 
-// Going through every page under pageDirectory
+/*************** HELPER FUNCTIONS **************/
+
+/**************** index_build() *****************/
+// Goes through every page in pageDirectory and creates new index with all pages' content
 index_t *index_build(char* pageDirectory) {
     // Initializing variables
     int id = 1;
+    // CHECK - SIZE
     int size = 900;
 
     char* filename = calloc(strlen(pageDirectory) + 5, sizeof(char));
@@ -68,22 +79,12 @@ index_t *index_build(char* pageDirectory) {
     // For each page in pageDirectory
     FILE *fp;
     while ((fp = fopen(filename, "r")) != NULL) {
-        int pos = 0;
-        char* word;
 
         // Create new webpage for each page file
         webpage_t *page = load_page(fp);
 
-        // Go through each word and add to index
-        while ((word = webpage_getNextWord(page, &pos)) != NULL) {
-            // Skipping over first two lines (url and depth)
-            if (strcmp(word, webpage_getURL(page)) == 0 || strcmp(word, webpage_getDepth(page)) == 0) {
-                continue;
-            }
-
-            index_insert(index, word, id);
-            free(word);
-        }
+        // Go through each word in the page and add to index accordingly
+        index_page(page, index, id);
 
         // Revise filename to open next 'id' file
         id++;
@@ -97,7 +98,20 @@ index_t *index_build(char* pageDirectory) {
     return index;
 }
 
-// webpage_getNextWord()
-// void index_page() {
+/**************** index_page() *****************/
+// Goes through page and adds page data to index
+void index_page(webpage_t *page, index_t *index, int id) {
+    char* word;
+    int pos = 0;
 
-// }
+    while ((word = webpage_getNextWord(page, &pos)) != NULL) {
+        if (normalize_word(word) == NULL) {
+            fprintf(stderr, "normalize_word() failed\n");
+        }
+        if (strcmp(word, webpage_getURL(page)) == 0 || strcmp(word, webpage_getDepth(page)) == 0 || strlen(word) < 3) {
+            continue;
+        }
+        index_insert(index, word, id);
+        free(word);
+    }
+}

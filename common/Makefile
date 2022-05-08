@@ -3,7 +3,7 @@
 # Ryan Kim
 # CS50, 22S
 
-OBJS = pagedir.o
+OBJS = pagedir.o index.o word.o
 LIB = ../common/common.a
 
 FLAGS = 
@@ -15,6 +15,8 @@ $(LIB): $(OBJS)
 	ar cr $(LIB) $(OBJS)
 
 pagedir.o: pagedir.h
+index.o: index.h
+word.o: word.h
 
 .PHONY: clean
 clean:

@@ -1,5 +1,5 @@
 /*
-pagedir.c – contains functions to be used by the crawler module
+pagedir.c – contains functions to be used by the crawler and indexer module
 
 Ryan Kim
 CS50, 22S
@@ -14,7 +14,7 @@ CS50, 22S
 #include "../libcs50/memory.h"
 
 /*********************** check_dir *************************/
-// see pagedir.h for details
+// see 'pagedir.h' for details
 bool check_dir(char* pageDirectory) {
 
     // Create filename in format: 'pageDirectory/.crawler'
@@ -36,7 +36,7 @@ bool check_dir(char* pageDirectory) {
 }
 
 /*********************** save_page *************************/
-// see pagedir.h for details
+// see 'pagedir.h' for details
 void save_page(webpage_t *webpage, char* filename) {
     FILE *fp = fopen(filename, "w");
 
@@ -54,7 +54,7 @@ void save_page(webpage_t *webpage, char* filename) {
 }
 
 /*********************** init_dir *************************/
-// see pagedir.h for details
+// see 'pagedir.h' for details
 bool is_crawlerdir(const char* pageDirectory) {
     // Create filename in format: 'pageDirectory/.crawler'
     char* filename = calloc(strlen(pageDirectory) + strlen("/.crawler") + 1, sizeof(char));
@@ -74,8 +74,9 @@ bool is_crawlerdir(const char* pageDirectory) {
     free(filename);
     return true;
 }
-// it reads page from file into a webpage structure, 
-// and returns the webpage structure
+
+/********************* load_page() ********************/
+// see 'pagedir.h' for details
 webpage_t* load_page(FILE *fp) {
     if (fp == NULL) {
         fprintf(stderr, "load_page() failed: null file pointer\n");
