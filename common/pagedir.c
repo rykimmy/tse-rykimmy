@@ -12,6 +12,7 @@ CS50, 22S
 #include "../libcs50/webpage.h"
 #include "../libcs50/hashtable.h"
 #include "../libcs50/memory.h"
+#include "../libcs50/file.h"
 
 /*********************** check_dir *************************/
 // see 'pagedir.h' for details
@@ -83,7 +84,12 @@ webpage_t* load_page(FILE *fp) {
         return NULL;
     }
     // CHECK – syntax; is this correct?
-    webpage_t *new = webpage_new(freadlinep(fp), freadlinep(fp), freadfilep(fp));
+    char* url = freadlinep(fp);
+    int depth;
+    sscanf(freadlinep(fp), "%d", &depth);
+    char* html = freadfilep(fp);
+    
+    webpage_t *new = webpage_new(url, depth, html);
     assertp(new, "load_page() failed: could not create new webpage\n");
     return new;
 }

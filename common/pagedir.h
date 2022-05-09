@@ -14,6 +14,7 @@
 #include "../libcs50/webpage.h"
 #include "../libcs50/hashtable.h"
 #include "../libcs50/memory.h"
+#include "../libcs50/file.h"
 
 /**************** check_dir ****************/
 /* If pointer fp is NULL, print error message to stderr and die,

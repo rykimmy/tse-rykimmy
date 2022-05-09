@@ -19,12 +19,44 @@ CS50, 22S
 
 typedef hashtable_t index_t;
 
+/******************* HELPER FUNCTIONS ********************/
+
+/******************* save_counts() ********************/
+void save_counts(void* arg, const int key, int count) {
+	FILE *fp = arg;
+	fprintf(fp, "%d %d", key, count);
+}
+
+/******************* save_item() ********************/
+void save_item(void* arg, const char* key, void* item) {
+    FILE *fp = arg;
+    counters_t *counters = item;
+
+    fprintf(fp, "%s", key);
+    counters_iterate(counters, fp, save_counts);
+    fprintf(fp, "\n");
+}
+
+
 /********************* FUNCTIONS ********************/
 
 /********************* index_new() ********************/
 // see 'index.h' for details
 index_t *index_new(const int num_slots) {
     return (index_t*)hashtable_new(num_slots);
+}
+
+/******************* index_find() ********************/
+// see 'index.h' for details
+counters_t *index_find(index_t *index, const char *key) {
+    // Error checking --> included because then if hashtable_find returns NULL, we know it's because there's no key in the hashtable
+    if (index == NULL || key == NULL) {
+        fprintf(stderr, "index_find() failed: invalid parameters\n");
+        return NULL;
+    }
+
+    // If returns NULL, means the key does not exist
+    return (counters_t*)hashtable_find((hashtable_t*)index, key);
 }
 
 /******************* index_insert() ********************/
@@ -45,25 +77,12 @@ bool index_insert(index_t *index, const char *key, int id) {
     }
     // If key already exists in hashtable, increment the counter set
     else {
-        if (counters_add((counters_t*)index_find(index, key), id) == 0) {
+        if (counters_add(index_find(index, key), id) == 0) {
             fprintf(stderr, "failed to increment counterset in index_insert()\n");
             return false;
         }
         return true;
     }
-}
-
-/******************* index_find() ********************/
-// see 'index.h' for details
-counters_t *index_find(index_t *index, char *key) {
-    // Error checking --> included because then if hashtable_find returns NULL, we know it's because there's no key in the hashtable
-    if (index == NULL || key == NULL) {
-        fprintf(stderr, "index_find() failed: invalid parameters\n");
-        return NULL;
-    }
-
-    // If returns NULL, means the key does not exist
-    return (counters_t*)hashtable_find((hashtable_t*)index, key);
 }
 
 /******************* index_delete() ********************/
@@ -110,6 +129,7 @@ index_t *index_load(char* index_file) {
         }
 
         index_insert(index, word, counters);
+        // CHECK - is this right if word is stored in index?
         free(word);
     }
 
@@ -128,23 +148,6 @@ bool index_save(index_t* index, char* index_file) {
     hashtable_iterate((hashtable_t*)index, fp, save_item);
     fclose(fp);
     return true;
-}
-
-/******************* HELPER FUNCTIONS ********************/
-/******************* save_item() ********************/
-void save_item(void* arg, const char* key, void* item) {
-    FILE *fp = arg;
-    counters_t *counters = item;
-
-    fprintf(fp, "%s", key);
-    counters_iterate(counters, fp, save_counts);
-    fprintf(fp, "\n");
-}
-
-/******************* save_counts() ********************/
-void save_counts(void* arg, const int key, int count) {
-	FILE *fp = arg;
-	fprintf(fp, "%d %d", key, count);
 }
 
 /*

@@ -56,7 +56,7 @@ Returns:
     counterset of the associated key
     NULL, if invalid parameters, or if key does not exist in the index
 */
-counters_t *index_find(index_t *index, char* key);
+counters_t *index_find(index_t *index, const char *key);
 
 /******************* index_delete() ********************/
 /*

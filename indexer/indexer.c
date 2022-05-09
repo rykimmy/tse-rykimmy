@@ -18,6 +18,9 @@ CS50, 22S
 #include "../common/index.h"
 #include "../common/word.h"
 
+index_t *index_build(char* pageDirectory);
+void index_page(webpage_t *page, index_t *index, int id);
+
 int main(const int argc, char *argv[]) {
     int status = 0;
 
