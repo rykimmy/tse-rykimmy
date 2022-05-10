@@ -1,5 +1,5 @@
 /*
-indextest.c - tests the index_load and index_save functions
+indextest.c - tests the index_load and index_save functions by reading an 'old' index file, creating an index, and writing the index into a new file
 
 Usage: ./indextest oldindexFile newindexFile
 
@@ -32,8 +32,8 @@ int main(const int argc, char *argv[]) {
         return status;
     }
 
-    char* oldindex = calloc(strlen(argv[1]), sizeof(char));
-    char* newindex = calloc(strlen(argv[2]), sizeof(char));
+    char* oldindex = calloc(strlen(argv[1]) + 1, sizeof(char));
+    char* newindex = calloc(strlen(argv[2]) + 1, sizeof(char));
     strcpy(oldindex, argv[1]);
     strcpy(newindex, argv[2]);
     assertp(oldindex, "failed to create oldindex\n");
@@ -45,6 +45,7 @@ int main(const int argc, char *argv[]) {
         status++;
         return status;
     }
+    printf("Done\n");
 
     index_delete(index);
     free(oldindex);

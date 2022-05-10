@@ -36,15 +36,15 @@ index_t *index_new(const int num_slots);
 
 /******************* index_insert() ********************/
 /*
-Inserts into an index; if the key already exists, increments the counterset item associated with the key and id
+Inserts key:counter pair into an index
 
 Takes:
-    index; key; id
+    index; counterset item; key
 Returns:
     true, if successfully inserted into index
     false otherwise
 */
-bool index_insert(index_t *index, const char* key, int id);
+bool index_insert(index_t *index, counters_t* counters, const char* key);
 
 /******************* index_find() ********************/
 /*

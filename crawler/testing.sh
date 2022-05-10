@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# testhing.sh
+# testing.sh
 #
 # Usage: ./testing.sh
 #

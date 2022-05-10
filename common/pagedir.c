@@ -60,13 +60,12 @@ bool is_crawlerdir(const char* pageDirectory) {
     // Create filename in format: 'pageDirectory/.crawler'
     char* filename = calloc(strlen(pageDirectory) + strlen("/.crawler") + 1, sizeof(char));
     sprintf(filename, "%s/.crawler", pageDirectory);
-    assertp(filename, "init_dir(): invalid filename creation\n");
+    assertp(filename, "is_crawlerdir(): invalid filename creation\n");
 
     // Open new file and react accordingly based on success
     FILE *fp;
-    if ((fp = fopen(filename, "w")) == NULL) {
-        fprintf(stderr, "init_dir(): invalid page directory\n");
-        fclose(fp);
+    if ((fp = fopen(filename, "r")) == NULL) {
+        fprintf(stderr, "is_crawlerdir(): invalid page directory\n");
         free(filename);
         return false;
     }
@@ -83,13 +82,17 @@ webpage_t* load_page(FILE *fp) {
         fprintf(stderr, "load_page() failed: null file pointer\n");
         return NULL;
     }
-    // CHECK – syntax; is this correct?
+
+    // Collect necessary values to create webpage
     char* url = freadlinep(fp);
-    int depth;
-    sscanf(freadlinep(fp), "%d", &depth);
+    char* depth = freadlinep(fp);
     char* html = freadfilep(fp);
+
+    int d;
+    sscanf(depth, "%d", &d);
     
-    webpage_t *new = webpage_new(url, depth, html);
+    webpage_t *new = webpage_new(url, d, html);
     assertp(new, "load_page() failed: could not create new webpage\n");
+    free(depth);
     return new;
 }

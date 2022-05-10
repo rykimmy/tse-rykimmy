@@ -29,4 +29,4 @@ clean:
 	rm -f *~ *.o
 	rm -f $(PROG)
 	rm -f core
-	rm -f pages/*
+#	rm -f pages/*

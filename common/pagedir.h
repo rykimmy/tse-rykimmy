@@ -48,7 +48,7 @@ void save_page(webpage_t *webpage, char* filename);
  *   true if success
  *   false if failed or file does not exist
  */
-bool init_dir(const char* pageDirectory);
+bool is_crawlerdir(const char* pageDirectory);
 
 /**************** load_page ****************/
 /* If pointer fp is NULL, print error message to stderr and return NULL,

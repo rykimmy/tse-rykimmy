@@ -27,6 +27,8 @@ int main(const int argc, char *argv[]) {
     // Checking number of arguments
     if (argc != 3) {
         fprintf(stderr, "invalid number of arguments\n");
+        status++;
+        return status;
     }
 
     // Checking pageDirectory
@@ -70,7 +72,6 @@ int main(const int argc, char *argv[]) {
 index_t *index_build(char* pageDirectory) {
     // Initializing variables
     int id = 1;
-    // CHECK - SIZE
     int size = 900;
 
     char* filename = calloc(strlen(pageDirectory) + 5, sizeof(char));
@@ -111,10 +112,28 @@ void index_page(webpage_t *page, index_t *index, int id) {
         if (normalize_word(word) == NULL) {
             fprintf(stderr, "normalize_word() failed\n");
         }
-        if (strcmp(word, webpage_getURL(page)) == 0 || strcmp(word, webpage_getDepth(page)) == 0 || strlen(word) < 3) {
+        if (strcmp(word, webpage_getURL(page)) == 0 || strlen(word) < 3) {
+            free(word);
             continue;
         }
-        index_insert(index, word, id);
+
+        counters_t* c = index_find(index, word);
+
+        // If key does not yet exist in index
+        if (c == NULL) {
+            counters_t *new = counters_new();
+            assertp(new, "failed to create new counterset in index_insert()\n");
+            counters_add(new, id);
+
+            index_insert(index, new, word);
+        }
+        // If key already exists in index, increment the counter set
+        else {
+            if (counters_add(c, id) == 0) {
+                fprintf(stderr, "failed to increment counterset in index_insert()\n");
+            }
+        }
+        // CHECK – do I also need to free counters_t *c?
         free(word);
     }
 }

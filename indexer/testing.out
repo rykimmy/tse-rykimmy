@@ -1,0 +1,58 @@
+Testing Error Cases: Command Line
+indexer: invalid number of arguments
+invalid number of arguments
+
+indexer: invalid pagedir
+is_crawlerdir(): invalid page directory
+invalid arg 2: cannot find page directory
+
+indextest: invalid number of arguments
+invalid number of arguments
+usage: ./indextest oldindexFile newindexFile
+
+mkdir: cannot create directory ‘pages’: File exists
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Saved to: ../indexer/pages/1
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+Saved to: ../indexer/pages/2
+Found: https://en.wikipedia.org/wiki/Algorithm
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+Saved to: ../indexer/pages/3
+Found: https://en.wikipedia.org/wiki/Breadth-first_search
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+Found: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+Saved to: ../indexer/pages/4
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+Saved to: ../indexer/pages/5
+Fetched: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+Saved to: ../indexer/pages/6
+Testing Valid Cases (using my crawler output)
+indexer: indexing letters-depth-1 into 'test1'
+
+indexer: indexing letters-depth-2 into 'test2'
+
+indexer: indexing letters-depth-3 into 'test3'
+
+indextest: moving 'test1' index file into 'new_test1' index file
+Done
+
+indextest: moving 'test2' index file into 'new_test2' index file
+Done
+
+indextest: moving 'test3' index file into 'new_test3' index file
+Done
+
+Comparing Test Files: test1 and new_test1
+test1: they're the same
+
+Comparing Test Files: test2 and new_test2
+test2: they're the same
+
+Comparing Test Files: test3 and new_test3
+test1: they're the same
