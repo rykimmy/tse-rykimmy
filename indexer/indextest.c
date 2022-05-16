@@ -13,16 +13,6 @@ CS50, 22S
 #include <stdlib.h>
 #include "../common/index.h"
 
-/*
-3. indextest: test index_load() and index_save()
-
-1). check arguments
-2). load index from an external 
-index_t* index = index_load(indexfile);
-3). save recreated index to a file
-index_save(index, newfile)
-4). delete index from the memory 
-*/
 int main(const int argc, char *argv[]) {
     int status = 0;
 

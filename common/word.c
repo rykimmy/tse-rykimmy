@@ -15,6 +15,7 @@ CS50, 22S
 char* normalize_word(char* word) {
     if (word == NULL) {
         fprintf(stderr, "normalize_word() failed: invalid word\n");
+        return NULL;
     }
 
     for (int i = 0; i < strlen(word); i++) {
