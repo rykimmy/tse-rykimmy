@@ -28,6 +28,17 @@ struct twocts {
     counters_t* append;
 };
 
+struct document {
+    int id;
+    int score;
+};
+
+struct documentlist {
+    int size;
+    int pos;
+    struct document** docs;
+};
+
 /******************* Local Function Prototypes ******************/
 // void spline(char** words, char* line);
 char** split_line(char* line);
@@ -37,6 +48,13 @@ void counters_intersect(counters_t* ct1, counters_t* ct2);
 void intersect_helper(void *arg, const int key, const int count);
 void counters_union(counters_t* ct1, counters_t* ct2);
 void union_helper(void* arg, const int key, const int count);
+void querier_delete(char** words, int num_words);
+void itemcount(void* arg, const int key, const int count);
+void sort_array(struct documentlist* list, int size);
+void fill_array(void* arg, const int key, const int count);
+int comparefunc(const void* a, const void* b);
+void print_array(struct documentlist* glist, int size);
+void delete_array(struct documentlist* glist, int size);
 
 static inline int min(const int a, const int b) {
     return (a < b ? a : b);
@@ -75,6 +93,7 @@ int main(const int argc, char *argv[]) {
         status++;
         return status;
     }
+    fclose(fp);
     
     index_t* index = index_load(indexFilename);
 
@@ -128,6 +147,7 @@ int main(const int argc, char *argv[]) {
 
             // 'and':
             else if (strcmp(words[count], a) == 0) {
+                count++;
                 continue;
             }
 
@@ -150,7 +170,7 @@ int main(const int argc, char *argv[]) {
                     // counters_print(tmp, stdout);
                     // fflush(stdout);
                 }
-                counters_delete(counters);
+                //counters_delete(counters);
             }
             count++;
         }
@@ -164,8 +184,37 @@ int main(const int argc, char *argv[]) {
         counters_print(result, stdout);
         printf("\n");
 
+        //------------- Ranking/Sorting Scores -------------//
+        
+        // Get size of counterset
+        int num_items = 0;
+        counters_iterate(result, &num_items, itemcount);
+        printf("%d\n", num_items);
+
+        // struct documentlist* list = malloc(sizeof(struct documentlist));
+        // list->size = num_items;
+        // list->pos = 0;
+        // // list->docs = calloc(num_items, sizeof(struct document));
+
+        struct document** d = calloc(num_items, sizeof(struct document));
+
+        struct documentlist list = {num_items, 0, d};
+        
+        
+        counters_set(result, 4, 6);
+        counters_iterate(result, &list, fill_array);
+
+        sort_array(&list, num_items);
+        
+        // qsort(d, num_items, sizeof(struct document), comparefunc);
+
+        print_array(&list, num_items);
+
+        delete_array(&list, num_items);
+
         // Cleanup
-        free(words);
+        // free(d);
+        querier_delete(words, num_words);
         free(input);
         counters_delete(result);
 
@@ -179,8 +228,150 @@ int main(const int argc, char *argv[]) {
 }
 
 /******************* HELPER FUNCTIONS ******************/
+/******************* delete_array() ******************/
+void delete_array(struct documentlist* glist, int size) {
+    struct documentlist* list = glist;
+
+    for (int i = 0; i < size; i++) {
+        if (list->docs[i] != NULL) {
+            free(list->docs[i]);
+        }
+    }
+    free(list->docs);
+}
+/******************* print_array() ******************/
+void print_array(struct documentlist* glist, int size) {
+    struct documentlist* list = glist;
+    struct document** array = list->docs;
+
+    for (int i = 0; i < size; i++) {
+        printf("ID: %d Score: %d\n", array[i]->id, array[i]->score);
+    }
+    printf("\n");
+}
+
+/******************* sort_array() ******************/
+void sort_array(struct documentlist* glist, int size) {
+    struct documentlist* list = glist;
+
+    // for (int i = 1; i < size; i++) {
+    //     int val = list->docs[i]->score;
+    //     int j = i - 1;
+
+    //     while (j >= 0 && list->docs[j]->score > val) {
+    //         list->docs[j + 1] = list->docs[j];
+    //         j = j - 1;
+    //     }
+    //     list->docs[j + 1] = list->docs[i];
+    // }
+
+    struct document** array = list->docs;
+    for (int i = 1; i < size; i++) {
+        int val = array[i]->score;
+        int j = i - 1;
+
+        while (j >= 0 && array[j]->score > val) {
+            array[j+1] = array[j];
+            j--;
+        }
+        array[j+1] = array[i];
+    }
+}
+
+/******************* comparefunc() ******************/
+
+int comparefunc(const void* a, const void* b) {
+    struct document* docA = (struct document*)a;
+    struct document* docB = (struct document*)b;
+    return (docA->score - docB->score);
+}
+
+/******************* fill_array() ******************/
+void fill_array(void* arg, const int key, const int count) {
+    struct documentlist* list = arg;
+
+    if (list != NULL && key > 0 && count > 0) {
+        struct document *pair = malloc(sizeof(struct document));
+        pair->id = key;
+        pair->score = count;
+        list->docs[list->pos] = pair;
+        // struct document pair = {key, count};
+        // list->docs[list->pos] = &pair;
+
+        list->pos++;
+    }
+
+    // struct document** doc = arg;
+
+    // if (doc != NULL && key >= 0 && count > 0) {
+    //     int i = 0;
+    //     while (doc[i] != NULL) {
+    //         i++;
+    //     }
+    //     struct document* single = {key, count};
+    //     doc[i] = malloc(sizeof(struct document*));
+    //     doc[i] = single;
+
+    //     // doc[i] = malloc(sizeof(struct document*));
+    //     // ((struct document*)doc[i])->id = key;
+    //     // doc[i]->score = count;
+    // }
+}
+
+/******************* itemcount() ******************/
+/*
+Helper function that gets passed into counters_iterate to count the number of items in the counterset.
+
+Takes:
+    void* arg - the counter variable which holds the count of items
+    int key - the key of a given node
+    int count - the corresponding value associated with the key (number of times key has appeared)
+Returns:
+    nothing
+*/
+void itemcount(void* arg, const int key, const int count) {
+    int *nitems = arg;
+
+    if (nitems != NULL && key >= 0 && count > 0) {
+        (*nitems)++;
+    }
+}
+
+/******************* querier_delete() ******************/
+/*
+Frees each word in an array of words as well as the array itself.
+
+Takes:
+    char** words - an array of words
+    int num_words - the number of words in the array
+Returns:
+    nothing
+Assumes:
+    parameters given are valid
+*/
+void querier_delete(char** words, int num_words) {
+    if (words == NULL || num_words < 1) {
+        fprintf(stderr, "querier_delete() failed: invalid parameters\n");
+    }
+    else {
+        for (int i = 0; i < num_words; i++) {
+            free(words[i]);
+        }
+        free(words);
+    }
+}
 
 /******************* counters_intersect() ******************/
+/*
+Given two counters, goes through both to intersect them; looks for keys that are in both counters and sets the score (count) of that key as the minimum count of both counters. At the end, there should be one main counterset that represents the intersection of the original two.
+
+Takes:
+    two counters
+Returns:
+    nothing
+Uses:
+    a helper function that is passed into counters_iterate and applied to each key:count node in the counter set
+*/
 void counters_intersect(counters_t* ct1, counters_t* ct2) {
     assertp(ct1, "counters_intersect() failed: invalid ct1\n");
     assertp(ct2, "counters_intersect() failed: invalid ct2\n");
@@ -195,6 +386,16 @@ void intersect_helper(void* arg, const int key, const int count) {
 }
 
 /******************* counters_union() ******************/
+/*
+Given two counters, goes through both to unionize them; adds the counts of keys to combine the counters into one.
+
+Takes:
+    two counters
+Returns:
+    nothing
+Uses:
+    a helper function that is passed into counters_iterate and applied to each key:count node in the counter set
+*/
 void counters_union(counters_t* ct1, counters_t* ct2) {
     assertp(ct1, "counters_union() failed: invalid ct1\n");
     assertp(ct2, "counters_union() failed: invalid ct2\n");
