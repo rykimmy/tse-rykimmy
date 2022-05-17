@@ -596,3 +596,4 @@ malloc for the word[]
 strcpy the char* start pointer to the word[]
 */
 
+// next commit
