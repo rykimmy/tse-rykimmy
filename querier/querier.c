@@ -200,12 +200,11 @@ int main(const int argc, char *argv[]) {
 
         struct documentlist list = {num_items, 0, d};
         
-        
         counters_set(result, 4, 6);
         counters_iterate(result, &list, fill_array);
 
         sort_array(&list, num_items);
-        
+
         // qsort(d, num_items, sizeof(struct document), comparefunc);
 
         print_array(&list, num_items);
@@ -213,7 +212,6 @@ int main(const int argc, char *argv[]) {
         delete_array(&list, num_items);
 
         // Cleanup
-        // free(d);
         querier_delete(words, num_words);
         free(input);
         counters_delete(result);
@@ -252,30 +250,42 @@ void print_array(struct documentlist* glist, int size) {
 
 /******************* sort_array() ******************/
 void sort_array(struct documentlist* glist, int size) {
-    struct documentlist* list = glist;
+    if (size < 2) {
+        return;
+    }
 
+    struct documentlist* list = glist;
+    struct document** array = list->docs;
+    struct document* temp;
+
+    for (int i = 1; i < size; i++) {
+        int val = array[i]->score;
+        int j = i - 1;
+
+        while (j >= 0 && array[j]->score < val) {
+            array[j+1]->id = array[j]->id;
+            array[j+1]->score = array[j]->score;
+
+            // array[j+1] = array[j];
+            --j;
+        }
+        // array[j+1] = array[i];
+        array[j+1]->id = array[i]->id;
+        array[j+1]->score = array[i]->score;
+    }
+
+    // // Insertion Sort approach
     // for (int i = 1; i < size; i++) {
     //     int val = list->docs[i]->score;
     //     int j = i - 1;
 
     //     while (j >= 0 && list->docs[j]->score > val) {
-    //         list->docs[j + 1] = list->docs[j];
-    //         j = j - 1;
+    //         struct document* temp = list->docs[j+1];
+    //         list->docs[j+1] = list->docs[j];
+    //         j--;
     //     }
-    //     list->docs[j + 1] = list->docs[i];
+    //     list->docs[j+1] = list->docs[i];
     // }
-
-    struct document** array = list->docs;
-    for (int i = 1; i < size; i++) {
-        int val = array[i]->score;
-        int j = i - 1;
-
-        while (j >= 0 && array[j]->score > val) {
-            array[j+1] = array[j];
-            j--;
-        }
-        array[j+1] = array[i];
-    }
 }
 
 /******************* comparefunc() ******************/

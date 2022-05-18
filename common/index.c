@@ -21,6 +21,7 @@ typedef hashtable_t index_t;
 
 void save_counts(void* arg, const int key, const int count);
 void save_item(void* arg, const char* key, void* item);
+static void word_delete(void* item);
 
 /********************* FUNCTIONS ********************/
 
@@ -58,9 +59,16 @@ bool index_insert(index_t *index, counters_t *counters, const char *key) {
 /******************* index_delete() ********************/
 // see 'index.h' for details
 void index_delete(index_t *index) {
-    hashtable_delete((hashtable_t*)index, counters_delete);
+    hashtable_delete((hashtable_t*)index, word_delete);
 }
+static void
+word_delete(void* item) {
+    counters_t* counterset = item;
 
+    if (counterset != NULL){
+        counters_delete(item);
+    }
+}
 /******************** index_load() ********************/
 // see 'index.h' for details
 index_t *index_load(char* index_file) {
