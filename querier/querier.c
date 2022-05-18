@@ -53,7 +53,7 @@ void itemcount(void* arg, const int key, const int count);
 void sort_array(struct documentlist* list, int size);
 void fill_array(void* arg, const int key, const int count);
 int comparefunc(const void* a, const void* b);
-void print_array(struct documentlist* glist, int size);
+void print_array(struct documentlist* glist, int size, char* pageDirectory);
 void delete_array(struct documentlist* glist, int size);
 
 static inline int min(const int a, const int b) {
@@ -98,8 +98,9 @@ int main(const int argc, char *argv[]) {
     index_t* index = index_load(indexFilename);
 
     //------------- Query -------------//
-    printf("Enter Query:\n");
+    printf("Enter Query: ");
     char* input;
+    bool correct = true; // Works as an exit method to break out of while loop
 
     // Repetitively get queries
     while ((input = freadlinep(stdin)) != NULL) {
@@ -111,7 +112,7 @@ int main(const int argc, char *argv[]) {
 
         // Error checking
         if (words == NULL) {
-            printf("Enter Query:\n");
+            printf("Enter Query: ");
             free(words);
             free(input);
             continue;
@@ -119,7 +120,7 @@ int main(const int argc, char *argv[]) {
 
         // Validate query syntax (checking operators)
         if (!validate_query(words)) {
-            printf("Enter Query:\n");
+            printf("Enter Query: ");
             free(words);
             free(input);
             continue;
@@ -127,9 +128,8 @@ int main(const int argc, char *argv[]) {
 
         // Print the query
         int num_words = print_query(words);
-        printf("%d\n", num_words);
 
-        //------------- The Shit -------------//
+        //------------- Querying -------------//
 
         counters_t *result = counters_new();
         counters_t *tmp = NULL;
@@ -154,25 +154,32 @@ int main(const int argc, char *argv[]) {
             // word:
             else {
                 counters_t* counters = index_find(index, words[count]);
+                if (counters == NULL) {
+                    fprintf(stderr, "invalid word: %s not found in index\n", words[count]);
+                    counters_delete(tmp);
+                    counters_delete(result);
+                    correct = false;
+                    break;
+                }
 
                 // Updating counterset 'tmp'
-                // CHECK – might need to include additional check to see if tmp is empty
                 if (tmp == NULL) {
                     tmp = counters_new();
                     counters_union(tmp, counters);
-
-                    // counters_print(tmp, stdout);
-                    // fflush(stdout);
                 }
                 else {
                     counters_intersect(tmp, counters);
-
-                    // counters_print(tmp, stdout);
-                    // fflush(stdout);
                 }
-                //counters_delete(counters);
             }
             count++;
+        }
+        if (!correct) {
+            printf("Enter Query: ");
+            correct = true;
+
+            querier_delete(words, num_words);
+            free(input);
+            continue;
         }
 
         // To avoid warnings
@@ -189,25 +196,18 @@ int main(const int argc, char *argv[]) {
         // Get size of counterset
         int num_items = 0;
         counters_iterate(result, &num_items, itemcount);
-        printf("%d\n", num_items);
 
-        // struct documentlist* list = malloc(sizeof(struct documentlist));
-        // list->size = num_items;
-        // list->pos = 0;
-        // // list->docs = calloc(num_items, sizeof(struct document));
-
+        // Create struct to hold array of documents (id, score)
         struct document** d = calloc(num_items, sizeof(struct document));
-
         struct documentlist list = {num_items, 0, d};
         
-        counters_set(result, 4, 6);
+        // Iterate through counter and fill document array with counterset data
         counters_iterate(result, &list, fill_array);
 
-        sort_array(&list, num_items);
+        // Sort the list using comparator function
+        qsort(d, num_items, sizeof(struct document), comparefunc);
 
-        // qsort(d, num_items, sizeof(struct document), comparefunc);
-
-        print_array(&list, num_items);
+        print_array(&list, num_items, pageDirectory);
 
         delete_array(&list, num_items);
 
@@ -216,7 +216,7 @@ int main(const int argc, char *argv[]) {
         free(input);
         counters_delete(result);
 
-        printf("Enter Query:\n");
+        printf("Enter Query: ");
     }
 
     index_delete(index);
@@ -238,12 +238,28 @@ void delete_array(struct documentlist* glist, int size) {
     free(list->docs);
 }
 /******************* print_array() ******************/
-void print_array(struct documentlist* glist, int size) {
+void print_array(struct documentlist* glist, int size, char* pageDirectory) {
     struct documentlist* list = glist;
     struct document** array = list->docs;
 
     for (int i = 0; i < size; i++) {
-        printf("ID: %d Score: %d\n", array[i]->id, array[i]->score);
+        char* filename = calloc(strlen(pageDirectory) + 3, sizeof(char));
+        sprintf(filename, "%s/%d", pageDirectory, array[i]->id);
+        assertp(filename, "print_array() failed: invalid filename creation\n");
+
+        FILE* fp = fopen(filename, "r");
+        if (fp == NULL) {
+            fprintf(stderr, "print_array() failed: cannot access files in pageDirectory\n");
+            return;
+            // SHOULD RETURN SMTH AND THEN PROMPT FOR A NEW QUERY
+        }
+        char* url = freadlinep(fp);
+
+        printf("DocID: %d Score: %d URL: %s\n", array[i]->id, array[i]->score, url);
+
+        fclose(fp);
+        free(url);
+        free(filename);
     }
     printf("\n");
 }
@@ -257,43 +273,34 @@ void sort_array(struct documentlist* glist, int size) {
     struct documentlist* list = glist;
     struct document** array = list->docs;
     struct document* temp;
+    for (int i = 0; i < size; i++) {
+        printf("%d %d\n", array[i]->id, array[i]->score);
+    }
 
     for (int i = 1; i < size; i++) {
         int val = array[i]->score;
         int j = i - 1;
 
         while (j >= 0 && array[j]->score < val) {
+            // array[j+1] = array[j];
             array[j+1]->id = array[j]->id;
             array[j+1]->score = array[j]->score;
 
-            // array[j+1] = array[j];
-            --j;
+            // printf("%d %d\n", array[j]->id, array[j]->score);
+
+            j = j - 1;
         }
         // array[j+1] = array[i];
         array[j+1]->id = array[i]->id;
         array[j+1]->score = array[i]->score;
     }
-
-    // // Insertion Sort approach
-    // for (int i = 1; i < size; i++) {
-    //     int val = list->docs[i]->score;
-    //     int j = i - 1;
-
-    //     while (j >= 0 && list->docs[j]->score > val) {
-    //         struct document* temp = list->docs[j+1];
-    //         list->docs[j+1] = list->docs[j];
-    //         j--;
-    //     }
-    //     list->docs[j+1] = list->docs[i];
-    // }
 }
 
 /******************* comparefunc() ******************/
-
 int comparefunc(const void* a, const void* b) {
-    struct document* docA = (struct document*)a;
-    struct document* docB = (struct document*)b;
-    return (docA->score - docB->score);
+    struct document* docA = *(struct document**)a;
+    struct document* docB = *(struct document**)b;
+    return (docB->score - docA->score);
 }
 
 /******************* fill_array() ******************/
@@ -304,28 +311,10 @@ void fill_array(void* arg, const int key, const int count) {
         struct document *pair = malloc(sizeof(struct document));
         pair->id = key;
         pair->score = count;
-        list->docs[list->pos] = pair;
-        // struct document pair = {key, count};
-        // list->docs[list->pos] = &pair;
 
+        list->docs[list->pos] = pair;
         list->pos++;
     }
-
-    // struct document** doc = arg;
-
-    // if (doc != NULL && key >= 0 && count > 0) {
-    //     int i = 0;
-    //     while (doc[i] != NULL) {
-    //         i++;
-    //     }
-    //     struct document* single = {key, count};
-    //     doc[i] = malloc(sizeof(struct document*));
-    //     doc[i] = single;
-
-    //     // doc[i] = malloc(sizeof(struct document*));
-    //     // ((struct document*)doc[i])->id = key;
-    //     // doc[i]->score = count;
-    // }
 }
 
 /******************* itemcount() ******************/
@@ -431,7 +420,6 @@ Assumes:
     char* line holds at least one word
 */
 char** split_line(char* line) {
-    // CHECK – given a line with only one word or even a black line
     char** words = calloc((strlen(line)+1) / 2, sizeof(char*));
     char* word = strtok(line, " ");
     int count = 0;
@@ -605,5 +593,3 @@ when the word is done, add the null character
 malloc for the word[]
 strcpy the char* start pointer to the word[]
 */
-
-// next commit
