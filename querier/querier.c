@@ -23,37 +23,45 @@ CS50, 22S
 #include "../libcs50/counters.h"
 
 /******************* Local Data Types ******************/
+/*
+Holds two counters, which will be merged together into one
+*/
 struct twocts {
     counters_t* result;
     counters_t* append;
 };
 
+/*
+Represents one element in the counter set (id:score)
+*/
 struct document {
     int id;
     int score;
 };
 
+/*
+Represents a collection of documents
+*/
 struct documentlist {
-    int size;
     int pos;
     struct document** docs;
 };
 
 /******************* Local Function Prototypes ******************/
-// void spline(char** words, char* line);
 char** split_line(char* line);
+bool isempty(char* line);
 bool validate_query(char** words);
 int print_query(char** words);
+bool check_operators(char** words, int num_words);
 void counters_intersect(counters_t* ct1, counters_t* ct2);
 void intersect_helper(void *arg, const int key, const int count);
 void counters_union(counters_t* ct1, counters_t* ct2);
 void union_helper(void* arg, const int key, const int count);
 void querier_delete(char** words, int num_words);
 void itemcount(void* arg, const int key, const int count);
-void sort_array(struct documentlist* list, int size);
 void fill_array(void* arg, const int key, const int count);
 int comparefunc(const void* a, const void* b);
-void print_array(struct documentlist* glist, int size, char* pageDirectory);
+bool print_array(struct documentlist* glist, int size, char* pageDirectory);
 void delete_array(struct documentlist* glist, int size);
 
 static inline int min(const int a, const int b) {
@@ -98,21 +106,23 @@ int main(const int argc, char *argv[]) {
     index_t* index = index_load(indexFilename);
 
     //------------- Query -------------//
-    printf("Enter Query: ");
-    char* input;
-    bool correct = true; // Works as an exit method to break out of while loop
 
-    // Repetitively get queries
+    printf("Enter Query: \n");
+    char* input;            // Each query line
+    bool correct = true;    // Works as an exit method to break out of nested while loop
+
+    // Repetitively get queries until user quits using EOF (ctrl D)
     while ((input = freadlinep(stdin)) != NULL) {
-
+    
         //------------- Checking/Setup of Query -------------//
+
         // Getting array of words
         char** words;
         words = split_line(input);
 
         // Error checking
         if (words == NULL) {
-            printf("Enter Query: ");
+            printf("Enter Query: \n");
             free(words);
             free(input);
             continue;
@@ -120,13 +130,13 @@ int main(const int argc, char *argv[]) {
 
         // Validate query syntax (checking operators)
         if (!validate_query(words)) {
-            printf("Enter Query: ");
+            printf("Enter Query: \n");
             free(words);
             free(input);
             continue;
         }
 
-        // Print the query
+        // Print the query (gets the number of words as a side effect)
         int num_words = print_query(words);
 
         //------------- Querying -------------//
@@ -135,6 +145,11 @@ int main(const int argc, char *argv[]) {
         counters_t *tmp = NULL;
         char* a = "and";
         char* o = "or";
+        bool or_sequence = false;
+
+        if (check_operators(words, num_words)) {
+            or_sequence = true;
+        }
 
         int count = 0;
         while (count < num_words) {
@@ -154,12 +169,21 @@ int main(const int argc, char *argv[]) {
             // word:
             else {
                 counters_t* counters = index_find(index, words[count]);
-                if (counters == NULL) {
-                    fprintf(stderr, "invalid word: %s not found in index\n", words[count]);
+
+                // If word does not exist in index and it is an <andsequence>
+                if (counters == NULL && or_sequence == false) {
+                    fprintf(stderr, "No matches found\n");
+
                     counters_delete(tmp);
                     counters_delete(result);
+
+                    // Breaks out of the inner while loop and catches a conditional to start a new query
                     correct = false;
                     break;
+                }
+                // Else if the word does not exist in index but it is an <orsequence>
+                else if (counters == NULL && or_sequence == true) {
+                    counters = counters_new();
                 }
 
                 // Updating counterset 'tmp'
@@ -173,23 +197,23 @@ int main(const int argc, char *argv[]) {
             }
             count++;
         }
+
+        // If word was not found in index, this conditional will reset the query process
         if (!correct) {
-            printf("Enter Query: ");
-            correct = true;
+            printf("Enter Query: \n");
 
             querier_delete(words, num_words);
             free(input);
+
+            correct = true;
             continue;
         }
 
-        // To avoid warnings
+        // Merge the counters into one
         if (tmp != NULL) {
             counters_union(result, tmp);
             counters_delete(tmp);
         }
-
-        counters_print(result, stdout);
-        printf("\n");
 
         //------------- Ranking/Sorting Scores -------------//
         
@@ -197,18 +221,27 @@ int main(const int argc, char *argv[]) {
         int num_items = 0;
         counters_iterate(result, &num_items, itemcount);
 
-        // Create struct to hold array of documents (id, score)
+        // Create struct documentlist to hold array of documents (id, score)
         struct document** d = calloc(num_items, sizeof(struct document));
-        struct documentlist list = {num_items, 0, d};
+        struct documentlist list = {0, d};
         
-        // Iterate through counter and fill document array with counterset data
+        // Iterate through counter and fill document array with counterset data using fill_array helper
         counters_iterate(result, &list, fill_array);
 
-        // Sort the list using comparator function
+        // Sort the list using comparefunc helper
         qsort(d, num_items, sizeof(struct document), comparefunc);
 
-        print_array(&list, num_items, pageDirectory);
+        // Print the sorted list of documents with its ID, Score, and URL
+        if (!print_array(&list, num_items, pageDirectory)) {
+            delete_array(&list, num_items);
+            querier_delete(words, num_words);
+            free(input);
+            counters_delete(result);
+            printf("Enter Query: \n");
+            continue;
+        }
 
+        // Delete array of documents and all of its contents
         delete_array(&list, num_items);
 
         // Cleanup
@@ -216,9 +249,11 @@ int main(const int argc, char *argv[]) {
         free(input);
         counters_delete(result);
 
-        printf("Enter Query: ");
+        // Prompts the next query
+        printf("Enter Query: \n");
     }
 
+    // Cleanup
     index_delete(index);
     free(pageDirectory);
     free(indexFilename);
@@ -226,8 +261,45 @@ int main(const int argc, char *argv[]) {
 }
 
 /******************* HELPER FUNCTIONS ******************/
-/******************* delete_array() ******************/
+
+/******************* check_operators ******************/
+/*
+Goes through the list of words from the query and checks if there are any 'or's. If so, returns true; else, returns false.
+
+Takes:
+    char** words - the list of words from the query
+    int num_words - the number of words in the list
+Returns:
+    true, if there are any 'or's
+    false, if there are none
+*/
+bool check_operators(char** words, int num_words) {
+    char* or = "or";
+    for (int i = 0; i < num_words; i++) {
+        if (strcmp(words[i], or) == 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/******************* delete_array ******************/
+/*
+Delete (free) all of the documents within given struct documentlist.
+
+Takes:
+    struct documentlist* glist - an array of documents
+    int size - the size of the array
+Returns:
+    nothing
+*/
 void delete_array(struct documentlist* glist, int size) {
+    // Error checking
+    if (glist == NULL || size < 1) {
+        fprintf(stderr, "delete_array failed: invalid arguments\n");
+        return;
+    }
+
     struct documentlist* list = glist;
 
     for (int i = 0; i < size; i++) {
@@ -238,65 +310,71 @@ void delete_array(struct documentlist* glist, int size) {
     free(list->docs);
 }
 /******************* print_array() ******************/
-void print_array(struct documentlist* glist, int size, char* pageDirectory) {
+/*
+Prints an array of documents, providing the ID, Score, and URL of each document.
+
+Takes:
+    struct documentlist* glist - the struct holding the array of documents
+    int size - the size of the array
+    char* pageDirectory - the directory holding all of the pages crawled by crawler
+Returns:
+    true if printed successfully
+    false if parameters are invalid or any errors (invalid filename/pageDirectory)
+Assumes:
+    pageDirectory documents are numbered and formatted properly (1, 2, 3...; URL is first line)
+*/
+bool print_array(struct documentlist* glist, int size, char* pageDirectory) {
+    // Error checking
+    if (glist == NULL || size < 1 || pageDirectory == NULL) {
+        fprintf(stderr, "print_array failed: invalid arguments\n");
+        return false;
+    }
+
+    // Initialize values
     struct documentlist* list = glist;
     struct document** array = list->docs;
 
+    printf("Matches %d document(s) (ranked):\n", size);
+    printf("--------------------------------------------------------------------------\n");
+
+    // For each document in the array
     for (int i = 0; i < size; i++) {
+
+        // Create filename to read into (in order to obtain the url of the document)
         char* filename = calloc(strlen(pageDirectory) + 3, sizeof(char));
         sprintf(filename, "%s/%d", pageDirectory, array[i]->id);
         assertp(filename, "print_array() failed: invalid filename creation\n");
 
+        // Open file and read line to get url
         FILE* fp = fopen(filename, "r");
         if (fp == NULL) {
             fprintf(stderr, "print_array() failed: cannot access files in pageDirectory\n");
-            return;
-            // SHOULD RETURN SMTH AND THEN PROMPT FOR A NEW QUERY
+            return false;
         }
         char* url = freadlinep(fp);
 
+        // Print each document's info
         printf("DocID: %d Score: %d URL: %s\n", array[i]->id, array[i]->score, url);
 
+        // Cleanup
         fclose(fp);
         free(url);
         free(filename);
     }
-    printf("\n");
-}
-
-/******************* sort_array() ******************/
-void sort_array(struct documentlist* glist, int size) {
-    if (size < 2) {
-        return;
-    }
-
-    struct documentlist* list = glist;
-    struct document** array = list->docs;
-    struct document* temp;
-    for (int i = 0; i < size; i++) {
-        printf("%d %d\n", array[i]->id, array[i]->score);
-    }
-
-    for (int i = 1; i < size; i++) {
-        int val = array[i]->score;
-        int j = i - 1;
-
-        while (j >= 0 && array[j]->score < val) {
-            // array[j+1] = array[j];
-            array[j+1]->id = array[j]->id;
-            array[j+1]->score = array[j]->score;
-
-            // printf("%d %d\n", array[j]->id, array[j]->score);
-
-            j = j - 1;
-        }
-        // array[j+1] = array[i];
-        array[j+1]->id = array[i]->id;
-        array[j+1]->score = array[i]->score;
-    }
+    printf("--------------------------------------------------------------------------\n");
+    return true;
 }
 
 /******************* comparefunc() ******************/
+/*
+Helper function to qsort() that takes two void* arguments (two struct documents) and compares their scores. This function is not called by the user but rather used by qsort().
+
+Takes:
+    const void* a - one struct document
+    const void* b - another struct document to be compared with the first
+Returns:
+    the score of docB minus score of docA
+*/
 int comparefunc(const void* a, const void* b) {
     struct document* docA = *(struct document**)a;
     struct document* docB = *(struct document**)b;
@@ -304,14 +382,26 @@ int comparefunc(const void* a, const void* b) {
 }
 
 /******************* fill_array() ******************/
+/*
+A helper function that is passed into counters_iterate to collect each counterset element's key=count data and store it within the struct documentlist's array of documents. It first makes a struct document out of the key=count values of the counterset and then adds that to the array of documents.
+
+Takes:
+    void* arg - this is the struct documentlist
+    const int key - the key of the counterset, which acts as the docID
+    const int count - the count of the counterset, which acts as the score of the document
+Returns:
+    nothing
+*/
 void fill_array(void* arg, const int key, const int count) {
     struct documentlist* list = arg;
 
     if (list != NULL && key > 0 && count > 0) {
+        // Create a document struct and set its id and score to the key and count of the counterset node
         struct document *pair = malloc(sizeof(struct document));
         pair->id = key;
         pair->score = count;
 
+        // Add the document to the array of documents in the documentlist
         list->docs[list->pos] = pair;
         list->pos++;
     }
@@ -379,6 +469,17 @@ void counters_intersect(counters_t* ct1, counters_t* ct2) {
     counters_iterate(ct1, &args, intersect_helper);
 }
 
+/******************* intersect_helper ******************/
+/*
+Helper function that is passed into counters_iterate when intersecting counters. This function sets the count of a key to the smaller of the counts in two countersets that are being merged.
+
+Takes:
+    void* arg - this is a struct twocts, which holds the two countersets being merged
+    const int key - the key of the counterset node, which represents the docID
+    const int count - the count of the counterset node, which represents the score of the document
+Returns:
+    nothing
+*/
 void intersect_helper(void* arg, const int key, const int count) {
     struct twocts* two = arg;
     counters_set(two->result, key, min(count, counters_get(two->append, key)));
@@ -403,6 +504,17 @@ void counters_union(counters_t* ct1, counters_t* ct2) {
     counters_iterate(ct2, &args, union_helper);
 }
 
+/******************* union_helper ******************/
+/*
+Helper function that is passed into counters_iterate when unionizing counters. This function sets the count of a key to the sum of the counts in two countersets that are being merged.
+
+Takes:
+    void* arg - this is a struct twocts, which holds the two countersets being merged
+    const int key - the key of the counterset node, which represents the docID
+    const int count - the count of the counterset node, which represents the score of the document
+Returns:
+    nothing
+*/
 void union_helper(void* arg, const int key, const int count) {
     struct twocts* two = arg;
     counters_set(two->result, key, counters_get(two->result, key) + count);
@@ -410,22 +522,29 @@ void union_helper(void* arg, const int key, const int count) {
 
 /******************* split_line() ******************/
 /*
-Given a string containing at least one word, split_line splits the line into multiple words and puts them all into an array of words, which is returned back to the caller.
+Given a string, split_line splits the line into multiple words and puts them all into an array of words, which is returned back to the caller. If the string is an empty line or just has spaces, returns NULL back to its caller, which prompts for another query.
 
 Takes:
     char* line - a string of words
 Returns:
     char** words - an array of words from 'line'
-Assumes:
-    char* line holds at least one word
+    NULL - if line is empty, NULL, or if there are invalid chars
 */
 char** split_line(char* line) {
+    // Error checking
+    if (line == NULL || isempty(line)) {
+        return NULL;
+    }
+
+    // Initializing values
     char** words = calloc((strlen(line)+1) / 2, sizeof(char*));
     char* word = strtok(line, " ");
     int count = 0;
 
+    // Going through the rest of the words and using strtok to split
     while (word != NULL) {
-        // Error Checking -> checking each char to see if it is a valid char
+
+        // Error Checking -> checking each char to see if it is a valid char (alphabet or space)
         for (int i = 0; i < strlen(word); i++) {
             char ch = word[i];
             if (isalpha(ch) == 0 && isspace(ch) == 0) {
@@ -434,6 +553,7 @@ char** split_line(char* line) {
             }
         }
 
+        // Changes everything to lower case
         word = normalize_word(word);
 
         // Add word to the array of words
@@ -447,6 +567,27 @@ char** split_line(char* line) {
     return words;
 }
 
+/******************* isempty ******************/
+/*
+Checks if an entered query is just space
+
+Takes:
+    char* line - the user's input
+Returns:
+    false, if any characters in the line are not a space
+    true, if there are only spaces
+*/
+bool isempty(char* line) {
+    for (int i = 0; i < strlen(line); i++) {
+
+        // If any char is not a space, return false;
+        if (isspace(line[i]) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
 /******************* validate_query ******************/
 /*
 Validates the query by going through words in given array of words and looking at the operators. Operators may not be at the front or back of the array, nor can they appear back to back.
@@ -458,6 +599,7 @@ Returns:
     false, if 'and' or 'or' operators appear at the beginning of the array, end of the array, or if they appear back to back
 */
 bool validate_query(char** words) {
+    // Initializing values
     char* a = "and";
     char* o = "or";
     int count = 0;
@@ -489,6 +631,7 @@ bool validate_query(char** words) {
         }
         count++;
     }
+
     // Checking the last word
     if (strcmp(words[count-1], a) == 0 || strcmp(words[count-1], o) == 0) {
         fprintf(stderr, "invalid query: cannot end with an operator\n");
@@ -508,88 +651,14 @@ Returns:
     count - number of words in array
 */
 int print_query(char** words) {
+    printf("Query: ");
+
     int count = 0;
     while (words[count] != NULL) {
         printf("%s ", words[count]);
         count++;
     }
     printf("\n");
+
     return count;
 }
-
-/******************* spline ******************/
-/*
-Given a string of multiple words, spline breaks the string into its constituent words by looking at individual characters and setting null characters accordingly. The function also does error checking to ensure that the given string does not include invalid characters (non alphabet or space).
-
-Takes:
-    a string that will be decomposed into words
-Returns:
-    a pointer to an array of words
-Exits:
-    if we find an invalid character (non alphabet or space)
-*/
-
-// void spline(char** words, char* line) {
-//     /*
-//     How to call in main:
-
-//     //char** words = malloc(((strlen(input) + 1)/2) * sizeof(char*));
-//     //spline(words, input);
-//     */
-//     bool word = false;
-//     int count = 0;
-
-//     for (int i = 0; i < strlen(line); i++) {
-
-//         // Error Checking -> exit if not alphabet or white space
-//         if (isalpha(line[i]) == 0 && isspace(line[i]) == 0) {
-//             fprintf(stderr, "invalid query: character '%c' is unacceptable\n", line[i]);
-//             exit(1);
-//         }
-
-//         // If not in a word...
-//         if (!word) {
-
-//             // If char is a letter (signalling beginning of word)
-//             if (isalpha(line[i]) != 0) {
-
-//                 // Set the address of the next word in words array
-//                 //words[count] = malloc(sizeof(char*));
-//                 words[count] = &line[i];
-
-//                 // Set word to true to mark we are in a word
-//                 word = true;
-//             }
-//         }
-
-//         // If already in a word...
-//         else if (word) {
-
-//             // If char is white-space (signalling end of word)
-//             if (isspace(line[i]) != 0) {
-
-//                 // Set white-space char to null character
-//                 line[i] = '\0';
-
-//                 // Set word to false to mark we are not in a word
-//                 word = false;
-
-//                 // Increment count to move onto next word in words
-//                 count++;
-//             }
-//         }
-//     }
-//     printf("%s\n", words[1]);
-// }
-
-/*
-char* start;
-start = line[i];
-
-This is if we have to allocate memory for each word:
-
-use a char pointer to hold the start of the word
-when the word is done, add the null character
-malloc for the word[]
-strcpy the char* start pointer to the word[]
-*/

@@ -16,11 +16,12 @@ MAKE = make
 $(PROG) : $(OBJS) $(LIBS)
 	$(CC) $(CFLAGS) $^ -o $@
 
-# querier.o: ../common/pagedir.h ../common/index.h ../common/word.h ../libcs50/file.h
 querier.o: querier.c
 
-.PHONY: clean
-
+.PHONY: clean test
+test: querier
+	chmod a+x testing.sh
+	./testing.sh &> testing.out
 clean:
 	rm -rf *.dSYM
 	rm -f *~ *.o

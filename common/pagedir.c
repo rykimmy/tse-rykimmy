@@ -59,7 +59,9 @@ void save_page(webpage_t *webpage, char* filename) {
 bool is_crawlerdir(const char* pageDirectory) {
     // Create filename in format: 'pageDirectory/.crawler'
     char* filename = calloc(strlen(pageDirectory) + strlen("/.crawler") + 1, sizeof(char));
-    sprintf(filename, "%s/.crawler", pageDirectory);
+    // sprintf(filename, "%s/.crawler", pageDirectory);
+    strcpy(filename, pageDirectory);
+    strcat(filename, "/.crawler");
     assertp(filename, "is_crawlerdir(): invalid filename creation\n");
 
     // Open new file and react accordingly based on success

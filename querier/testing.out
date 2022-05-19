@@ -1,0 +1,104 @@
+Testing Error Cases
+-----------------------------------------
+Error Test Case 1: no arguments
+Invalid number of arguments
+Usage: ./querier pageDirectory indexFilename
+-----------------------------------------
+Error Test Case 2: invalid pagedir
+is_crawlerdir(): invalid page directory
+-----------------------------------------
+Error Test Case 3: invalid indexFilename
+invalid arg 3: indexFilename does not exist or is not readable
+-----------------------------------------
+Error Test Case 4: blank query
+Enter Query: 
+Enter Query: 
+-----------------------------------------
+Error Test Case 5: invalid operators
+invalid query: cannot begin with an operator
+Enter Query: 
+Enter Query: 
+-----------------------------------------
+Error Test Case 6: invalid operators
+invalid query: cannot have back to back operators
+Enter Query: 
+Enter Query: 
+-----------------------------------------
+Error Test Case 7: invalid operators
+invalid query: cannot end with an operator
+Enter Query: 
+Enter Query: 
+-----------------------------------------
+Error Test Case 8: invalid query (bad chars)
+invalid query: character '9' is unacceptable
+Enter Query: 
+Enter Query: 
+-----------------------------------------
+Error Test Case 9: nonexistent word in <andsequence>
+No matches found
+Enter Query: 
+Query: for and free 
+Enter Query: 
+-----------------------------------------
+Testing Valid Cases
+-----------------------------------------
+Valid Test Case 1: single word
+Enter Query: 
+Query: for 
+Matches 6 document(s) (ranked):
+--------------------------------------------------------------------------
+DocID: 1 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+DocID: 2 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+DocID: 3 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+DocID: 4 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+DocID: 5 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+DocID: 6 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+--------------------------------------------------------------------------
+Enter Query: 
+-----------------------------------------
+Valid Test Case 2: nonexistent word in <orsequence>
+Enter Query: 
+Query: for or free 
+Matches 6 document(s) (ranked):
+--------------------------------------------------------------------------
+DocID: 1 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+DocID: 2 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/A.html
+DocID: 3 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/B.html
+DocID: 4 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/E.html
+DocID: 5 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/D.html
+DocID: 6 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/C.html
+--------------------------------------------------------------------------
+Enter Query: 
+-----------------------------------------
+Valid Test Case 3: <andsequence> with valid words
+Enter Query: 
+Query: home and this 
+Matches 1 document(s) (ranked):
+--------------------------------------------------------------------------
+DocID: 1 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+--------------------------------------------------------------------------
+Enter Query: 
+-----------------------------------------
+Valid Test Case 4: sequence of valid words
+==11233== Memcheck, a memory error detector
+==11233== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11233== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==11233== Command: ./querier /thayerfs/courses/22spring/cosc050/cs50tse/tse-output/letters-depth-3 /thayerfs/courses/22spring/cosc050/cs50tse/tse-output/letters-index-3
+==11233== 
+Enter Query: 
+Query: home this or search algorithm 
+Matches 1 document(s) (ranked):
+--------------------------------------------------------------------------
+DocID: 1 Score: 1 URL: http://cs50tse.cs.dartmouth.edu/tse/letters/index.html
+--------------------------------------------------------------------------
+Enter Query: 
+==11233== 
+==11233== HEAP SUMMARY:
+==11233==     in use at exit: 0 bytes in 0 blocks
+==11233==   total heap usage: 145 allocs, 145 frees, 34,395 bytes allocated
+==11233== 
+==11233== All heap blocks were freed -- no leaks are possible
+==11233== 
+==11233== For counts of detected and suppressed errors, rerun with: -v
+==11233== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+-----------------------------------------
