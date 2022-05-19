@@ -1,9 +1,9 @@
 /*
-querier.c – 
+querier.c
 
 Usage: ./querier pageDirectory indexFilename
 
-Input: nothing other than command-line arguments
+Input: command-line arguments + user stdin
 Output: error messages
 
 Ryan Kim
