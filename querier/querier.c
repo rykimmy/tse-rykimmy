@@ -4,7 +4,7 @@ querier.c
 Usage: ./querier pageDirectory indexFilename
 
 Input: command-line arguments + user stdin
-Output: error messages
+Output: error messages + query ranking
 
 Ryan Kim
 CS50, 22S
