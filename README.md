@@ -7,7 +7,7 @@ To build, run `make`.
 
 To clean up, run `make clean`.
 
-To execute `testing.sh`, run `make test` in the 'crawler' directory.
+To execute `testing.sh`, run `make test` in the appropriate directory.
 
 #### Extra Comments
 
